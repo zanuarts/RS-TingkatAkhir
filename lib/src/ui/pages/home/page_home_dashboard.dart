@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:flutter/rendering.dart';
 import 'package:smkdev/src/constants/constant.dart';
 
 class HomeDashboard extends StatefulWidget {
@@ -46,7 +47,7 @@ class _HomeDashboardState extends State<HomeDashboard> {
         ),
         Container(
           decoration: BoxDecoration(
-            color: Colors.red
+            color: colorPrimary
           )
         ),
         Container(
@@ -56,7 +57,7 @@ class _HomeDashboardState extends State<HomeDashboard> {
         ),
         Container(
           decoration: BoxDecoration(
-            color: Colors.grey
+            color: colorPrimary
           )
         ),
       ],
@@ -76,7 +77,169 @@ class _HomeDashboardState extends State<HomeDashboard> {
       body: ListView(
         children: <Widget>[
           imageCarousel,
-          Text("Selamat Datang")
+          Padding(
+            padding: EdgeInsets.fromLTRB(20, 20, 20, 10),
+            child: Text(
+              "Temui Kami",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
+            child: Container(
+              height: 150,
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.circular(10)
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+            child: Text(
+              "Rumah Sakit SMKDEV \nJl. Margacinta No. 29 \nSenin - Jumat : 08.00 - 20.00 \nSabtu : 08.00 - 17.00 \n\nKlinik SMKDEV \nJl. Mars Barat I No. 9 \nSenin - Jumat : 08.00 - 20.00 \nSabtu : 08.00 - 13.00 \n\nBPJS \nSenin - Jumat : 07.00 - 14.00, 16.00 - 19.00 \nSabtu : 07.00 - 12.00",
+            ),
+          ),
+          Container(
+            height: 560,
+            decoration: BoxDecoration(
+              color: colorPrimary,
+            ),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(left: 20, top: 20),
+                      child: Text(
+                        "Tentang Kami",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(right: 20, top: 20),
+                      child: Text(
+                        "Selengkapnya",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(20, 20, 20, 10),
+                  child: Container(
+                    height: 240,
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(15)
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                  child: Container(
+                    height: 200,
+                    child: ListView(
+                      // This next line does the trick.
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        Container(
+                          width: 160.0,
+                          color: Colors.red,
+                        ),
+                        Container(
+                          width: 160.0,
+                          color: Colors.blue,
+                        ),
+                        Container(
+                          width: 160.0,
+                          color: Colors.green,
+                        ),
+                        Container(
+                          width: 160.0,
+                          color: Colors.yellow,
+                        ),
+                        Container(
+                          width: 160.0,
+                          color: Colors.orange,
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
+            child: Text(
+              "Berita Terbaru",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+            child: Container(
+              height: 200,
+              child: ListView(
+                // This next line does the trick.
+                scrollDirection: Axis.horizontal,
+                  children: <Widget>[
+                    Container(
+                      width: 160.0,
+                      color: Colors.red,
+                    ),
+                    Container(
+                      width: 160.0,
+                      color: Colors.blue,
+                    ),
+                    Container(
+                      width: 160.0,
+                      color: Colors.green,
+                    ),
+                    Container(
+                      width: 160.0,
+                      color: Colors.yellow,
+                    ),
+                    Container(
+                      width: 160.0,
+                      color: Colors.orange,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(20, 30, 20, 10),
+              child: Text(
+                "Kontak & Pengaduan",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(20, 10, 20, 30),
+              child: Text(
+                "Rumah Sakit SMKDEV \nJl. Margacinta No. 29 \n\ninfo@smk.dev \n\n+622 7000 0000 \t+622 7000 0000",
+              ),
+            ),
         ]
       ),
     );
