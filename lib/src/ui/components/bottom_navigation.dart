@@ -15,7 +15,7 @@ class MainBottomNav extends StatefulWidget {
 class _MainBottomNavState extends State<MainBottomNav> {
   int _selectedIndex = 0;
   int currentIndex = 0;
-  
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -44,31 +44,22 @@ class _MainBottomNavState extends State<MainBottomNav> {
       bottomNavigationBar: BottomNavigationBar(
         showUnselectedLabels: false,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
             icon: Icon(Icons.healing),
-            title: Text('Layanan'),
+            label: "Layanan",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.calendar_today),
-            title: Text('Booking'),
+            label: 'Booking',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.supervised_user_circle),
-            title: Text('Profile'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.more),
-            title: Text('More'),
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          BottomNavigationBarItem(icon: Icon(Icons.more), label: 'More'),
         ],
-        unselectedItemColor: Colors.grey,
+        unselectedItemColor: Colors.grey[400],
         selectedItemColor: colorPrimary,
         backgroundColor: Colors.white,
-        iconSize: 30,
+        iconSize: 25,
         elevation: 0.0,
         onTap: _onItemTapped,
         currentIndex: _selectedIndex,
