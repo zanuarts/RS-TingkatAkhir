@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/ui/components/more_popup.dart';
 import 'package:smkdev/src/ui/pages/booking/page_booking_dashboard.dart';
 import 'package:smkdev/src/ui/pages/home/page_home_dashboard.dart';
@@ -65,7 +66,7 @@ class _MainBottomNavState extends State<MainBottomNav> {
           ),
         ],
         unselectedItemColor: Colors.grey,
-        selectedItemColor: Colors.purple,
+        selectedItemColor: colorPrimary,
         backgroundColor: Colors.white,
         iconSize: 30,
         elevation: 0.0,
