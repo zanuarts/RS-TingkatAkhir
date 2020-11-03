@@ -6,15 +6,18 @@ class BookingItem extends StatelessWidget {
     Key key,
     this.name,
     this.specialist,
+    this.clickBack,
   }) : super(key: key);
 
   final String name, specialist;
+  final Function clickBack;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: clickBack,
       child: Container(
+        color: Colors.transparent,
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 35),
         child: Row(
           children: [
