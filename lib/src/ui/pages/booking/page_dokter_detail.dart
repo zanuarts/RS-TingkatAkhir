@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
+import 'package:smkdev/src/ui/components/booking/booking_form_user.dart';
 import 'package:smkdev/src/ui/components/booking/doctor_schedule_item.dart';
+import 'package:smkdev/src/ui/components/buttons/button_primary.dart';
 import 'package:smkdev/src/ui/components/widget_short_description.dart';
+import 'package:smkdev/src/ui/components/dialog_form.dart';
 
 class BookingDoctorDetail extends StatefulWidget {
   @override
@@ -147,21 +150,13 @@ class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
         width: size.width,
         padding: EdgeInsets.all(15),
         decoration: BoxDecoration(boxShadow: darkShadow, color: Colors.white),
-        child: RaisedButton(
-          onPressed: () {},
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        child: ButtonPrimary(
+          buttonText: "Buat Janji",
           color: colorPrimary,
           textColor: Colors.white,
-          child: Container(
-            height: 56,
-            child: Center(
-              child: Text(
-                "Buat Janji",
-                style: TextStyle(fontSize: 20),
-              ),
-            ),
-          ),
+          onClicked: () {
+            showFormBooking(size, true, context);
+          },
         ),
       ),
     );
