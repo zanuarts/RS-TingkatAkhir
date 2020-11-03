@@ -64,8 +64,8 @@ class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
           ),
           SizedBox.expand(
             child: DraggableScrollableSheet(
-              initialChildSize: 0.5,
-              minChildSize: 0.5,
+              initialChildSize: 0.45,
+              minChildSize: 0.45,
               maxChildSize: 0.85,
               builder: (BuildContext context, s) {
                 return Container(
