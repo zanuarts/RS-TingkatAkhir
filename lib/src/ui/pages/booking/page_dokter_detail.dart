@@ -5,7 +5,7 @@ import 'package:smkdev/src/ui/components/booking/booking_form_user.dart';
 import 'package:smkdev/src/ui/components/booking/doctor_schedule_item.dart';
 import 'package:smkdev/src/ui/components/buttons/button_primary.dart';
 import 'package:smkdev/src/ui/components/widget_short_description.dart';
-import 'package:smkdev/src/utils/dialog_form.dart';
+import 'package:smkdev/src/ui/components/dialog_form.dart';
 
 class BookingDoctorDetail extends StatefulWidget {
   @override
