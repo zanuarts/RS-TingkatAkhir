@@ -70,7 +70,7 @@ class HeaderBooking extends StatelessWidget {
                           focusedBorder: InputBorder.none),
                     ),
                   ),
-                  IconButton(icon: Icon(Icons.search), onPressed: () {})
+                  IconButton(icon: Icon(Icons.search, color: colorPrimary), onPressed: () {})
                 ],
               ),
             ),
