@@ -97,6 +97,7 @@ class _BookingConfirmState extends State<BookingConfirm> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          SizedBox(height: 10),
                           Center(
                             child: Text(
                               "Booking Details",
