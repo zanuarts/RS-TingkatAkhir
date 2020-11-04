@@ -1,6 +1,7 @@
 import 'package:cupertino_radio_choice/cupertino_radio_choice.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smkdev/src/constants/constant.dart';
 
 class FeedbackDashboard extends StatefulWidget {
   @override
@@ -24,7 +25,6 @@ class _FeedbackDashboardState extends State<FeedbackDashboard> {
       });
     }
 
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -35,8 +35,10 @@ class _FeedbackDashboardState extends State<FeedbackDashboard> {
           color: Colors.black87,
         ),
       ),
-      body: ListView(
+      body: Form(
+        child: ListView(
         padding: EdgeInsets.fromLTRB(20, 10, 20, 30),
+        
         children: <Widget>[
           Text(
             "Feedback Pelayanan Rumah Sakit SMKDEV",
@@ -50,6 +52,60 @@ class _FeedbackDashboardState extends State<FeedbackDashboard> {
           ),
           Text(
             "Terimakasih atas kepercayaan Bapak/Ibu dalam memakai aplikasi dan pelayanan Rumah Sakit SMKDEV. Silahkan berikan saran melalui form ini, karena setiap masukan sangat bermanfaat bagi peningkatan pelayanan dan aplikasi kami selanjutnya."
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            "Apa yang anda rasakan saat mendapatkan pelayanan kami?",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ),
+          ),
+          TextFormField(
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            "Bagaimana pendapat anda tentang pelayanan yang kami berikan?",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ),
+          ),
+          TextFormField(
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            "Dimana kekurangan kami?",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ),
+          ),
+          TextFormField(
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
           ),
           SizedBox(
             height: 20,
@@ -87,11 +143,30 @@ class _FeedbackDashboardState extends State<FeedbackDashboard> {
               onChange: onRatingSelected,
               initialKeyValue: _selectedRating
           ),
-           SizedBox(
+          SizedBox(
             height: 20,
           ),
-          
+          Text(
+            "Saran penyempurnaan untuk kami",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ),
+          ),
+          TextFormField(
+            validator: (value) {
+              if (value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(onPressed: (){}, child: Text("Submit"))
         ],
+        ),
       ),
     );
   }
