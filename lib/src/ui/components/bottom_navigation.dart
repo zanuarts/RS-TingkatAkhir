@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/ui/components/more_popup.dart';
 import 'package:smkdev/src/ui/pages/booking/page_booking_dashboard.dart';
+import 'package:smkdev/src/ui/pages/feedback/page_feedback_dashboard.dart';
 import 'package:smkdev/src/ui/pages/home/page_home_dashboard.dart';
 import 'package:smkdev/src/ui/pages/layanan/page_layanan_dashboard.dart';
 import 'package:smkdev/src/ui/pages/profile/page_profile_dashboard.dart';
@@ -30,7 +31,7 @@ class _MainBottomNavState extends State<MainBottomNav> {
     pageList.add(LayananDashboard());
     pageList.add(BookingDashboard());
     pageList.add(ProfileDashboard());
-    pageList.add(MorePop());
+    pageList.add(FeedbackDashboard());
     super.initState();
   }
 
@@ -44,17 +45,17 @@ class _MainBottomNavState extends State<MainBottomNav> {
       bottomNavigationBar: BottomNavigationBar(
         showUnselectedLabels: false,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: "Home"),
           BottomNavigationBarItem(
-            icon: Icon(Icons.healing),
+            icon: Icon(Icons.work_outline_outlined),
             label: "Layanan",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
+            icon: Icon(Icons.calendar_today_outlined),
             label: 'Booking',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-          BottomNavigationBarItem(icon: Icon(Icons.more), label: 'More'),
+          BottomNavigationBarItem(icon: Icon(Icons.person_outline_outlined), label: 'Profile'),
+          BottomNavigationBarItem(icon: Icon(Icons.more_vert_rounded), label: 'More'),
         ],
         unselectedItemColor: Colors.grey[400],
         selectedItemColor: colorPrimary,
