@@ -2,10 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/ui/components/booking/booking_form_user.dart';
+import 'package:smkdev/src/ui/components/booking/bottom_nav.dart';
 import 'package:smkdev/src/ui/components/booking/doctor_schedule_item.dart';
 import 'package:smkdev/src/ui/components/buttons/button_primary.dart';
 import 'package:smkdev/src/ui/components/widget_short_description.dart';
 import 'package:smkdev/src/ui/components/dialog_form.dart';
+import 'package:smkdev/src/ui/pages/booking/page_booking_confirm.dart';
 
 class BookingDoctorDetail extends StatefulWidget {
   @override
@@ -146,18 +148,19 @@ class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
           )
         ],
       ),
-      bottomNavigationBar: Container(
-        width: size.width,
-        padding: EdgeInsets.all(15),
-        decoration: BoxDecoration(boxShadow: darkShadow, color: Colors.white),
-        child: ButtonPrimary(
-          buttonText: "Buat Janji",
-          color: colorPrimary,
-          textColor: Colors.white,
-          onClicked: () {
-            showFormBooking(size, true, context);
-          },
-        ),
+      bottomNavigationBar: BottomNavBooking(
+        size: size,
+        buttonClick: () {
+          showFormBooking(size, true, context, () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => BookingConfirm()));
+          });
+        },
+        buttonText: "Buat Janji",
+        colorButton: colorPrimary,
+        textColor: Colors.white,
       ),
     );
   }
