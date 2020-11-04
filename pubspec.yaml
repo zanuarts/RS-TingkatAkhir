@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   carousel_pro: ^1.0.0
+  cupertino_radio_choice: ^1.0.0+2
 
 
   # The following adds the Cupertino Icons font to your application.
