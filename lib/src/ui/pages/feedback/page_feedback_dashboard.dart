@@ -2,6 +2,7 @@ import 'package:cupertino_radio_choice/cupertino_radio_choice.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
+import 'package:smkdev/src/ui/components/buttons/button_primary.dart';
 
 class FeedbackDashboard extends StatefulWidget {
   @override
@@ -138,11 +139,11 @@ class _FeedbackDashboardState extends State<FeedbackDashboard> {
           SizedBox(
             height: 15,
           ),
-          CupertinoRadioChoice(
-              choices: ratingMap,
-              onChange: onRatingSelected,
-              initialKeyValue: _selectedRating
-          ),
+          // CupertinoRadioChoice(
+          //     choices: ratingMap,
+          //     onChange: onRatingSelected,
+          //     initialKeyValue: _selectedRating
+          // ),
           SizedBox(
             height: 20,
           ),
@@ -164,7 +165,12 @@ class _FeedbackDashboardState extends State<FeedbackDashboard> {
           SizedBox(
             height: 20,
           ),
-          ElevatedButton(onPressed: (){}, child: Text("Submit"))
+          ButtonPrimary(
+            buttonText: "Submit",
+            color: colorPrimary,
+            textColor: Colors.white,
+            onClicked: (){},
+          )
         ],
         ),
       ),

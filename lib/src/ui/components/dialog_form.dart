@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/ui/components/buttons/button_primary.dart';
 
-void showFormBooking(Size size, bool _warning, BuildContext context) {
+void showFormBooking(
+    Size size, bool _warning, BuildContext context, Function daftarClick) {
   final _formKey = GlobalKey<FormState>();
   bool _autoValidate = false;
   TextEditingController textNama = new TextEditingController();
@@ -265,7 +266,7 @@ void showFormBooking(Size size, bool _warning, BuildContext context) {
                                         buttonText: "Daftar",
                                         color: colorPrimary,
                                         textColor: Colors.white,
-                                        onClicked: () {},
+                                        onClicked: daftarClick,
                                       ),
                                     ],
                                   )
