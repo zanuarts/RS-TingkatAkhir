@@ -5,8 +5,13 @@ import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/ui/components/booking/bottom_nav.dart';
 
 class BookingConfirm extends StatefulWidget {
+  const BookingConfirm({Key key, this.doctorName, this.specialist})
+      : super(key: key);
+
   @override
   _BookingConfirmState createState() => _BookingConfirmState();
+
+  final String doctorName, specialist;
 }
 
 class _BookingConfirmState extends State<BookingConfirm> {
@@ -50,18 +55,18 @@ class _BookingConfirmState extends State<BookingConfirm> {
                   CircleAvatar(radius: 40),
                   SizedBox(height: 10),
                   Text(
-                    "DOKTOR",
+                    widget.doctorName,
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 16,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 6),
                   Text(
-                    "UMUM",
+                    widget.specialist,
                     style: TextStyle(
                         color: Colors.white70,
-                        fontSize: 12,
+                        fontSize: 14,
                         fontWeight: FontWeight.w400),
                   )
                 ],
