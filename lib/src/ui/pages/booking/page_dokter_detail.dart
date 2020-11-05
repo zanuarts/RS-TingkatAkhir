@@ -155,7 +155,10 @@ class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (BuildContext context) => BookingConfirm()));
+                    builder: (BuildContext context) => BookingConfirm(
+                          doctorName: widget.name,
+                          specialist: widget.specialist,
+                        )));
           });
         },
         buttonText: "Buat Janji",
