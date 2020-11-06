@@ -7,29 +7,20 @@ class HomeMaps extends StatefulWidget {
 }
 
 class _HomeMapsState extends State<HomeMaps> {
-  double long;
-  double lat;
-
-  // GOOGLE MAPS
   final Set<Marker> _markers = {};
-  GoogleMapController mapController;
-  LatLng _center = LatLng(-6.897980, 107.619328); // bandung
+  LatLng _currentPosition = LatLng(3.595196, 98.672226);
   
-  BitmapDescriptor myIcon;
   @override
   void initState() {
     _markers.add(
       Marker(
-        markerId: MarkerId("-6.897980, 107.619328"),
-        position: _center,
+        markerId: MarkerId("3.595196, 98.672226"),
+        position: _currentPosition,
         icon: BitmapDescriptor.defaultMarker,
       ),
     );
     super.initState();
-}
-  void _onMapCreated(GoogleMapController controller) {
-    mapController = controller;
-  }
+  }  
 
   @override
   Widget build(BuildContext context) {
@@ -37,17 +28,28 @@ class _HomeMapsState extends State<HomeMaps> {
       padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
       child: Container(
         height: 150,
-        decoration: BoxDecoration(
-          color: Colors.transparent,
-          borderRadius: BorderRadius.circular(10)
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: GoogleMap(
+          mapType: MapType.normal,
+        initialCameraPosition: CameraPosition(
+          target: _currentPosition,
+          zoom: 14.0,
         ),
-        child: GoogleMap(
-          onMapCreated: _onMapCreated,
-          initialCameraPosition: CameraPosition(
-            target: _center,
-            zoom: 14.0,
-          ),
-          markers: _markers,
+        markers: _markers,
+        onTap: (position) {
+          setState(() {
+            _markers.add(
+              Marker(
+                markerId:
+                    MarkerId("${position.latitude}, ${position.longitude}"),
+                icon: BitmapDescriptor.defaultMarker,
+                position: position,
+              ),
+            );
+          });
+        },
+        ),
         ),
       ),
     );         
