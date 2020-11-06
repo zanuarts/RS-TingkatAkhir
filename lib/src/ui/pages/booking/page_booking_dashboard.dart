@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:smkdev/src/ui/components/booking/booking_item.dart';
-import 'package:smkdev/src/ui/components/booking/header_booking.dart';
 import 'package:smkdev/src/ui/pages/booking/page_dokter_detail.dart';
+import 'package:smkdev/src/ui/widgets/booking/booking_item.dart';
+import 'package:smkdev/src/ui/widgets/booking/header_booking.dart';
 
 class BookingDashboard extends StatefulWidget {
   @override
