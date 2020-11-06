@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
-import 'package:smkdev/src/ui/components/more_popup.dart';
 import 'package:smkdev/src/ui/pages/booking/page_booking_dashboard.dart';
 import 'package:smkdev/src/ui/pages/feedback/page_feedback_dashboard.dart';
 import 'package:smkdev/src/ui/pages/home/page_home_dashboard.dart';
@@ -43,7 +42,7 @@ class _MainBottomNavState extends State<MainBottomNav> {
         children: pageList,
       ),
       bottomNavigationBar: BottomNavigationBar(
-        showUnselectedLabels: false,
+        showUnselectedLabels: true,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: "Home"),
           BottomNavigationBarItem(

@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:smkdev/src/constants/constant.dart';
 
 class ButtonPrimary extends StatelessWidget {
   const ButtonPrimary({
