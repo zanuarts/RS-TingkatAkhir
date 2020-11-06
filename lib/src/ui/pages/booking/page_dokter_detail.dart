@@ -40,7 +40,7 @@ class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: size.height * 0.16),
+            margin: EdgeInsets.only(top: size.height * 0.14),
             width: size.width,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,

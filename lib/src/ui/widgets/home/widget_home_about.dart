@@ -44,22 +44,27 @@ class HomeAbout extends StatelessWidget {
                   
                       child: Container(
                         height: 240,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(15),
-                          child: Stack(
-                            children: [
-                              Image.asset('assets/images/medicine_01.jpg'),
-                              // Container(
-                              //   height: 60,
-                              //   decoration: BoxDecoration(
-                              //     color: Colors.white,
-                              //   ),
-                              // ),
-                              // Text(
-                              //   "Rumah sakit kami menjual obat-obatan ilegal"
-                              // )
-                            ],
-                          )
+                        child: Container(
+                          decoration: BoxDecoration(
+                            boxShadow: darkShadow
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(15),
+                            child: Stack(
+                              children: [
+                                Image.asset('assets/images/medicine_01.jpg'),
+                                // Container(
+                                //   height: 60,
+                                //   decoration: BoxDecoration(
+                                //     color: Colors.white,
+                                //   ),
+                                // ),
+                                // Text(
+                                //   "Rumah sakit kami menjual obat-obatan ilegal"
+                                // )
+                              ],
+                            )
+                          ),
                         ),
                       ),
                       
