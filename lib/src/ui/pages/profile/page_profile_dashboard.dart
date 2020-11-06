@@ -22,7 +22,7 @@ class _ProfileDashboardState extends State<ProfileDashboard> {
           children: <Widget>[
             Container(
               width: size.width,
-              padding: EdgeInsets.fromLTRB(20, size.height * 0.08, 20, 0),
+              padding: EdgeInsets.fromLTRB(20, size.height * 0.07, 20, 0),
               child: Text(
                 "Profile",
                 style: TextStyle(
