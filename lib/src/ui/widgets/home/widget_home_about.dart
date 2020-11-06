@@ -41,13 +41,29 @@ class HomeAbout extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.fromLTRB(20, 20, 20, 10),
-                  child: Container(
-                    height: 240,
-                    decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(15)
-                    ),
-                  ),
+                  
+                      child: Container(
+                        height: 240,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Stack(
+                            children: [
+                              Image.asset('assets/images/medicine_01.jpg'),
+                              // Container(
+                              //   height: 60,
+                              //   decoration: BoxDecoration(
+                              //     color: Colors.white,
+                              //   ),
+                              // ),
+                              // Text(
+                              //   "Rumah sakit kami menjual obat-obatan ilegal"
+                              // )
+                            ],
+                          )
+                        ),
+                      ),
+                      
+                                    
                 ),
                 Padding(
                   padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
