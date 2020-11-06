@@ -46,7 +46,7 @@ class ProfileListItem extends StatelessWidget {
                             fontWeight: FontWeight.w400, fontSize: 12),
                       ),
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 25),
                     Container(
                       width: 300,
                       child: Row(
@@ -67,7 +67,7 @@ class ProfileListItem extends StatelessWidget {
                                       color: read
                                           ? Colors.transparent
                                           : colorSecondary,
-                                      borderRadius: BorderRadius.circular(10)),
+                                      borderRadius: BorderRadius.circular(15)),
                                   child: read
                                       ? Text("")
                                       : Text(
@@ -82,7 +82,7 @@ class ProfileListItem extends StatelessWidget {
                                       horizontal: 20, vertical: 5),
                                   decoration: BoxDecoration(
                                       color: done ? colorLabel2 : colorLabel1,
-                                      borderRadius: BorderRadius.circular(10)),
+                                      borderRadius: BorderRadius.circular(15)),
                                   child: Text(
                                     badge,
                                     style: TextStyle(
