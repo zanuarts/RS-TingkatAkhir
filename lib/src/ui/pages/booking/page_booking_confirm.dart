@@ -270,11 +270,9 @@ class DateDescription extends StatelessWidget {
     this.name,
     this.icon,
     this.text,
-  })  : _date = date,
-        super(key: key);
+  }) : super(key: key);
 
   final Size size;
-  final DateTime _date;
   final String name, text;
   final Icon icon;
 

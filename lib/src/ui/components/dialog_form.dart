@@ -226,17 +226,17 @@ void showFormBooking(
                                         borderRadius:
                                             BorderRadius.circular(15)),
                                     child: TextFormField(
-                                      controller: textNama,
+                                      controller: textEmail,
                                       keyboardType: TextInputType.text,
                                       validator: (value) {
                                         if (value.length < 3) {
                                           print('is empty');
-                                          return 'Username must be more than 6 charater';
+                                          return 'Email must be more than 6 charater';
                                         } else
                                           return null;
                                       },
                                       onSaved: (String val) {
-                                        _nama = val;
+                                        _email = val;
                                       },
                                       decoration: InputDecoration(
                                           contentPadding: EdgeInsets.only(
