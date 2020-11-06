@@ -42,7 +42,7 @@ class _MainBottomNavState extends State<MainBottomNav> {
         children: pageList,
       ),
       bottomNavigationBar: BottomNavigationBar(
-        showUnselectedLabels: false,
+        showUnselectedLabels: true,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: "Home"),
           BottomNavigationBarItem(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:smkdev/src/constants/constant.dart';
-import 'package:smkdev/src/ui/components/booking/bottom_nav.dart';
+import 'package:smkdev/src/ui/widgets/booking/bottom_nav.dart';
 
 class BookingConfirm extends StatefulWidget {
   const BookingConfirm({Key key, this.doctorName, this.specialist})

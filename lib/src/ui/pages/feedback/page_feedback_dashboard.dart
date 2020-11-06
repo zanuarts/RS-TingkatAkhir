@@ -13,7 +13,7 @@ class _FeedbackDashboardState extends State<FeedbackDashboard> {
   static final Map<String, String> ratingMap = {
     'puas': 'Puas',
     'biasa': 'Biasa',
-    'tidak puas': 'Tidak Puas',
+    'tidak_puas': 'Tidak Puas',
   };
 
   String _selectedRating = ratingMap.keys.first;
@@ -139,11 +139,11 @@ class _FeedbackDashboardState extends State<FeedbackDashboard> {
           SizedBox(
             height: 15,
           ),
-          // CupertinoRadioChoice(
-          //     choices: ratingMap,
-          //     onChange: onRatingSelected,
-          //     initialKeyValue: _selectedRating
-          // ),
+          CupertinoRadioChoice(
+              choices: ratingMap,
+              onChange: onRatingSelected,
+              initialKeyValue: _selectedRating
+          ),
           SizedBox(
             height: 20,
           ),
