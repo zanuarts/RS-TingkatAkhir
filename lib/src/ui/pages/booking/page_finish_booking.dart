@@ -1,0 +1,86 @@
+import 'package:flutter/material.dart';
+import 'package:smkdev/src/constants/constant.dart';
+import 'package:smkdev/src/ui/components/buttons/button_primary.dart';
+import 'package:smkdev/src/ui/pages/home/page_home_dashboard.dart';
+
+class FinishedBooking extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Scaffold(
+      backgroundColor: colorPrimary,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(20),
+            margin: EdgeInsets.only(top: size.height * 0.16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(Icons.check_circle, color: Colors.white, size: 150),
+                SizedBox(height: 6),
+                Text("Booking Sukses !",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25)),
+                SizedBox(height: 30),
+                Text("Kode booking anda",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 13)),
+                Text("B12345X",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25)),
+                SizedBox(height: 30),
+                RichText(
+                  text: TextSpan(
+                      text:
+                          "Customer Service kami akan menghubungi anda untuk konfirmasi selanjutnya.",
+                      style: TextStyle(
+                          fontFamily: "Poppins",
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14)),
+                  textAlign: TextAlign.center,
+                )
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(bottom: 40, right: 20, left: 20),
+            child: Column(
+              children: [
+                ButtonPrimary(
+                  buttonText: "Lihat Histori",
+                  color: Colors.white,
+                  textColor: colorPrimary,
+                  onClicked: () {},
+                ),
+                SizedBox(height: 30),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                HomeDashboard()));
+                  },
+                  child: Text("Kembali ke Home",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16)),
+                )
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
