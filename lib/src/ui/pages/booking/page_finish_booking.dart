@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smkdev/main.dart';
 import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/ui/components/buttons/button_primary.dart';
 import 'package:smkdev/src/ui/pages/home/page_home_dashboard.dart';
@@ -64,11 +65,10 @@ class FinishedBooking extends StatelessWidget {
                 SizedBox(height: 30),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
+                    Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                HomeDashboard()));
+                            builder: (BuildContext context) => MyApp()));
                   },
                   child: Text("Kembali ke Home",
                       style: TextStyle(
