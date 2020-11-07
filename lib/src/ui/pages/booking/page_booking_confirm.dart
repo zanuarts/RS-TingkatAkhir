@@ -246,9 +246,9 @@ class _BookingConfirmState extends State<BookingConfirm> {
         size: size,
         buttonClick: () {
           Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (BuildContext context) => FinishedBooking()));
+              context,
+              MaterialPageRoute(
+                  builder: (BuildContext context) => FinishedBooking()));
         },
         buttonText: "Konfirmasi",
         colorButton: colorPrimary,
