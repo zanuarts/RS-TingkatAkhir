@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:smkdev/src/constants/constant.dart';
+import 'package:smkdev/src/ui/pages/booking/page_change_patient.dart';
+import 'package:smkdev/src/ui/pages/booking/page_finish_booking.dart';
 import 'package:smkdev/src/ui/widgets/booking/bottom_nav.dart';
 
 class BookingConfirm extends StatefulWidget {
@@ -142,7 +144,13 @@ class _BookingConfirmState extends State<BookingConfirm> {
                                 IconButton(
                                     icon: Icon(Icons.edit,
                                         color: colorLabel1, size: 22),
-                                    onPressed: () {})
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ChangePatient()));
+                                    })
                               ],
                             ),
                           ),
@@ -236,7 +244,12 @@ class _BookingConfirmState extends State<BookingConfirm> {
       ),
       bottomNavigationBar: BottomNavBooking(
         size: size,
-        buttonClick: () {},
+        buttonClick: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (BuildContext context) => FinishedBooking()));
+        },
         buttonText: "Konfirmasi",
         colorButton: colorPrimary,
         textColor: Colors.white,
