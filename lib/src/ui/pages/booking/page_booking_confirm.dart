@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:smkdev/src/constants/constant.dart';
+import 'package:smkdev/src/models/doctor.dart';
 import 'package:smkdev/src/ui/pages/booking/page_change_patient.dart';
 import 'package:smkdev/src/ui/pages/booking/page_finish_booking.dart';
 import 'package:smkdev/src/ui/widgets/booking/bottom_nav.dart';
 
 class BookingConfirm extends StatefulWidget {
-  const BookingConfirm({Key key, this.doctorName, this.specialist})
-      : super(key: key);
+  const BookingConfirm({Key key, this.doctor}) : super(key: key);
 
   @override
   _BookingConfirmState createState() => _BookingConfirmState();
 
-  final String doctorName, specialist;
+  final Doctor doctor;
 }
 
 class _BookingConfirmState extends State<BookingConfirm> {
@@ -57,7 +57,7 @@ class _BookingConfirmState extends State<BookingConfirm> {
                   CircleAvatar(radius: 40),
                   SizedBox(height: 10),
                   Text(
-                    widget.doctorName,
+                    widget.doctor.name,
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
@@ -65,7 +65,7 @@ class _BookingConfirmState extends State<BookingConfirm> {
                   ),
                   SizedBox(height: 6),
                   Text(
-                    widget.specialist,
+                    widget.doctor.specialist,
                     style: TextStyle(
                         color: Colors.white70,
                         fontSize: 14,

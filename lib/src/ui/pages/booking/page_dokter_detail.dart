@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
+import 'package:smkdev/src/models/doctor.dart';
 import 'package:smkdev/src/ui/widgets/booking/bottom_nav.dart';
 import 'package:smkdev/src/ui/widgets/booking/doctor_schedule_item.dart';
 import 'package:smkdev/src/ui/widgets/widget_short_description.dart';
@@ -10,9 +11,8 @@ import 'package:smkdev/src/ui/pages/booking/page_booking_confirm.dart';
 class BookingDoctorDetail extends StatefulWidget {
   @override
   _BookingDoctorDetailState createState() => _BookingDoctorDetailState();
-  const BookingDoctorDetail({Key key, this.name, this.specialist})
-      : super(key: key);
-  final String name, specialist;
+  const BookingDoctorDetail({Key key, this.doctor}) : super(key: key);
+  final Doctor doctor;
 }
 
 class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
@@ -48,7 +48,7 @@ class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
                 CircleAvatar(radius: 80),
                 SizedBox(height: 10),
                 Text(
-                  widget.name,
+                  widget.doctor.name,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 24,
@@ -56,7 +56,7 @@ class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
                 ),
                 SizedBox(height: 6),
                 Text(
-                  widget.specialist,
+                  widget.doctor.specialist,
                   style: TextStyle(
                       color: Colors.white70,
                       fontSize: 20,
@@ -154,8 +154,7 @@ class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
                 context,
                 MaterialPageRoute(
                     builder: (BuildContext context) => BookingConfirm(
-                          doctorName: widget.name,
-                          specialist: widget.specialist,
+                          doctor: widget.doctor,
                         )));
           });
         },

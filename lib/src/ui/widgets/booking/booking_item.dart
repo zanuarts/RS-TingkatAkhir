@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smkdev/src/models/doctor.dart';
 
 class BookingItem extends StatelessWidget {
   const BookingItem({
     Key key,
-    this.name,
-    this.specialist,
     this.clickBack,
+    this.doctor,
   }) : super(key: key);
 
-  final String name, specialist;
   final Function clickBack;
+  final Doctor doctor;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class BookingItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    name,
+                    doctor.name,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -43,7 +43,7 @@ class BookingItem extends StatelessWidget {
                     height: 6,
                   ),
                   Text(
-                    specialist,
+                    doctor.specialist,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                         fontWeight: FontWeight.w400,
