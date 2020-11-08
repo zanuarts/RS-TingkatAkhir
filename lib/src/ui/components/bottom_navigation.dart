@@ -25,7 +25,7 @@ class _MainBottomNavState extends State<MainBottomNav> {
 
   List<Doctor> doctorList = List<Doctor>();
 
-  void getDummyData() {
+  void getDummyDoctor() {
     String spes = "Umum";
 
     for (var i = 0; i < 10; i++) {
@@ -57,7 +57,7 @@ class _MainBottomNavState extends State<MainBottomNav> {
     pageList.add(ProfileDashboard());
     pageList.add(FeedbackDashboard());
     super.initState();
-    this.getDummyData();
+    this.getDummyDoctor();
   }
 
   @override
