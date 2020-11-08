@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
+import 'package:smkdev/src/models/doctor.dart';
 import 'package:smkdev/src/ui/pages/booking/page_booking_dashboard.dart';
 import 'package:smkdev/src/ui/pages/feedback/page_feedback_dashboard.dart';
 import 'package:smkdev/src/ui/pages/home/page_home_dashboard.dart';
@@ -22,16 +23,41 @@ class _MainBottomNavState extends State<MainBottomNav> {
     });
   }
 
+  List<Doctor> doctorList = List<Doctor>();
+
+  void getDummyData() {
+    String spes = "Umum";
+
+    for (var i = 0; i < 10; i++) {
+      if (i % 7 == 0) {
+        spes = "Ahli syaraf";
+      } else if (i % 2 == 0) {
+        spes = "Ahli syaraf";
+      } else if (i % 3 == 0) {
+        spes = "Ahli mata";
+      } else if (i % 4 == 0) {
+        spes = "Ahli telinga";
+      } else {
+        spes = "Ahli gigi";
+      }
+
+      doctorList.add(Doctor.withId((i + 1), "Doktor $i", spes));
+    }
+  }
+
   List<Widget> pageList = List<Widget>();
 
   @override
   void initState() {
     pageList.add(HomeDashboard());
     pageList.add(LayananDashboard());
-    pageList.add(BookingDashboard());
+    pageList.add(BookingDashboard(
+      doctorList: doctorList,
+    ));
     pageList.add(ProfileDashboard());
     pageList.add(FeedbackDashboard());
     super.initState();
+    this.getDummyData();
   }
 
   @override
@@ -44,7 +70,8 @@ class _MainBottomNavState extends State<MainBottomNav> {
       bottomNavigationBar: BottomNavigationBar(
         showUnselectedLabels: true,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: "Home"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined), label: "Home"),
           BottomNavigationBarItem(
             icon: Icon(Icons.work_outline_outlined),
             label: "Layanan",
@@ -53,8 +80,10 @@ class _MainBottomNavState extends State<MainBottomNav> {
             icon: Icon(Icons.calendar_today_outlined),
             label: 'Booking',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.person_outline_outlined), label: 'Profile'),
-          BottomNavigationBarItem(icon: Icon(Icons.more_vert_rounded), label: 'More'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person_outline_outlined), label: 'Profile'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.more_vert_rounded), label: 'More'),
         ],
         unselectedItemColor: Colors.grey[400],
         selectedItemColor: colorPrimary,
