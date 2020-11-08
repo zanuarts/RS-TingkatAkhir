@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/models/doctor.dart';
+import 'package:smkdev/src/models/user.dart';
 import 'package:smkdev/src/ui/widgets/booking/bottom_nav.dart';
 import 'package:smkdev/src/ui/widgets/booking/doctor_schedule_item.dart';
 import 'package:smkdev/src/ui/widgets/widget_short_description.dart';
@@ -16,6 +17,31 @@ class BookingDoctorDetail extends StatefulWidget {
 }
 
 class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
+  List<User> userList = List<User>();
+  void getDummyUser() {
+    String kelamin = "Perempuan";
+    String status = "Kamu";
+
+    for (var i = 0; i < 3; i++) {
+      if (i % 2 == 0) {
+        kelamin = "Laki-laki";
+        status = "Anak";
+      } else if (i % 1 == 0) {
+        status = "Ibu";
+      }
+
+      userList.add(User.withId(i, "Name $i", "email${i}@gmail.com", kelamin,
+          status, "08212345678$i"));
+    }
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    this.getDummyUser();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -149,14 +175,21 @@ class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
       bottomNavigationBar: BottomNavBooking(
         size: size,
         buttonClick: () {
-          showFormBooking(size, true, context, () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (BuildContext context) => BookingConfirm(
-                          doctor: widget.doctor,
-                        )));
-          });
+          this.userList.length == 0
+              ? showFormBooking(size, true, context, () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => BookingConfirm(
+                                doctor: widget.doctor,
+                              )));
+                })
+              : Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => BookingConfirm(
+                            doctor: widget.doctor,
+                          )));
         },
         buttonText: "Buat Janji",
         colorButton: colorPrimary,

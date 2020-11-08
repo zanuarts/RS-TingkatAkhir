@@ -5,6 +5,9 @@ import 'package:smkdev/src/ui/components/buttons/button_primary.dart';
 import 'package:smkdev/src/ui/pages/home/page_home_dashboard.dart';
 
 class FinishedBooking extends StatelessWidget {
+  final String bookingCode;
+
+  const FinishedBooking({Key key, this.bookingCode}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -32,7 +35,7 @@ class FinishedBooking extends StatelessWidget {
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
                         fontSize: 13)),
-                Text("B12345X",
+                Text(bookingCode,
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
