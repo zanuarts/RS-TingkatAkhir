@@ -43,8 +43,6 @@ class _MainBottomNavState extends State<MainBottomNav> {
 
       doctorList.add(Doctor.withId((i + 1), "Doktor $i", spes));
     }
-
-    print(doctorList[0].name);
   }
 
   List<Widget> pageList = List<Widget>();

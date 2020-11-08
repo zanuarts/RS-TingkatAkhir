@@ -14,30 +14,6 @@ class BookingDashboard extends StatefulWidget {
 }
 
 class _BookingDashboardState extends State<BookingDashboard> {
-  // List<Doctor> doctorList;
-
-  // void getDummyData() {
-  //   String spes = "Umum";
-
-  //   for (var i = 0; i < 10; i++) {
-  //     if (i % 7 == 0) {
-  //       spes = "Ahli syaraf";
-  //     } else if (i % 2 == 0) {
-  //       spes = "Ahli syaraf";
-  //     } else if (i % 3 == 0) {
-  //       spes = "Ahli mata";
-  //     } else if (i % 4 == 0) {
-  //       spes = "Ahli telinga";
-  //     } else {
-  //       spes = "Ahli gigi";
-  //     }
-
-  //     doctorList.add(Doctor.withId((i + 1), "Doktor $i", spes));
-  //   }
-
-  //   print(doctorList);
-  // }
-
   @override
   void initState() {
     super.initState();
