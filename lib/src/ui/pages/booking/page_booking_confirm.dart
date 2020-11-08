@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:random_string/random_string.dart';
 import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/models/doctor.dart';
 import 'package:smkdev/src/models/user.dart';
@@ -24,7 +25,7 @@ class _BookingConfirmState extends State<BookingConfirm> {
   int selectedIndex = 0;
 
   void getDummyUser() {
-    String kelamin = "Perempuan";
+    String kelamin = "Laki-laki";
     String status = "Kamu";
 
     for (var i = 0; i < 3; i++) {
@@ -33,6 +34,7 @@ class _BookingConfirmState extends State<BookingConfirm> {
         status = "Anak";
       } else if (i % 1 == 0) {
         status = "Ibu";
+        kelamin = "Perempuan";
       }
 
       userList.add(User.withId(i, "Name $i", "email${i}@gmail.com", kelamin,
@@ -283,10 +285,13 @@ class _BookingConfirmState extends State<BookingConfirm> {
       bottomNavigationBar: BottomNavBooking(
         size: size,
         buttonClick: () {
-          Navigator.push(
+          String bookingCode = "B" + randomAlphaNumeric(5).toUpperCase();
+          Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                  builder: (BuildContext context) => FinishedBooking()));
+                  builder: (BuildContext context) => FinishedBooking(
+                        bookingCode: bookingCode,
+                      )));
         },
         buttonText: "Konfirmasi",
         colorButton: colorPrimary,
