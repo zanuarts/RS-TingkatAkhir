@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/models/doctor.dart';
+import 'package:smkdev/src/ui/components/more_popup.dart';
 import 'package:smkdev/src/ui/pages/booking/page_booking_dashboard.dart';
-import 'package:smkdev/src/ui/pages/feedback/page_feedback_dashboard.dart';
 import 'package:smkdev/src/ui/pages/home/page_home_dashboard.dart';
 import 'package:smkdev/src/ui/pages/layanan/page_layanan_dashboard.dart';
 import 'package:smkdev/src/ui/pages/profile/page_profile_dashboard.dart';
@@ -55,7 +55,7 @@ class _MainBottomNavState extends State<MainBottomNav> {
       doctorList: doctorList,
     ));
     pageList.add(ProfileDashboard());
-    pageList.add(FeedbackDashboard());
+    pageList.add(MorePop());
     super.initState();
     this.getDummyDoctor();
   }

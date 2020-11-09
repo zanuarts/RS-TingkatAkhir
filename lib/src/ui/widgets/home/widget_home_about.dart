@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/ui/components/cards/cards_doctor.dart';
 import 'package:smkdev/src/ui/components/cards/cards_about.dart';
+import 'package:smkdev/src/ui/pages/about/page_about_app.dart';
 
-import '../../../constants/constant.dart';
-import '../../pages/tentang/page_tentang_dashboard.dart';
 
 class HomeAbout extends StatelessWidget {
   @override
@@ -50,7 +50,7 @@ class HomeAbout extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => TentangDashboard()),
+                              builder: (context) => AboutDashboard()),
                         );
                       },
                     )),

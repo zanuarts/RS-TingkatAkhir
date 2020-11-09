@@ -30,6 +30,7 @@ class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
         status = "Ibu";
       }
 
+      // ignore: unnecessary_brace_in_string_interps
       userList.add(User.withId(i, "Name $i", "email${i}@gmail.com", kelamin,
           status, "08212345678$i"));
     }
@@ -37,7 +38,6 @@ class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     this.getDummyUser();
   }
