@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:smkdev/src/ui/components/cards/cards_doctor.dart';
+import 'package:smkdev/src/ui/components/cards/cards_about.dart';
 
 import '../../../constants/constant.dart';
 
@@ -41,34 +43,7 @@ class HomeAbout extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.fromLTRB(20, 20, 20, 10),
-                  
-                      child: Container(
-                        height: 240,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            boxShadow: darkShadow
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(15),
-                            child: Stack(
-                              children: [
-                                Image.asset('assets/images/medicine_01.jpg'),
-                                // Container(
-                                //   height: 60,
-                                //   decoration: BoxDecoration(
-                                //     color: Colors.white,
-                                //   ),
-                                // ),
-                                // Text(
-                                //   "Rumah sakit kami menjual obat-obatan ilegal"
-                                // )
-                              ],
-                            )
-                          ),
-                        ),
-                      ),
-                      
-                                    
+                  child: AboutCards(),
                 ),
                 Padding(
                   padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
@@ -78,26 +53,11 @@ class HomeAbout extends StatelessWidget {
                       // This next line does the trick.
                       scrollDirection: Axis.horizontal,
                       children: <Widget>[
-                        Container(
-                          width: 160.0,
-                          color: Colors.red,
-                        ),
-                        Container(
-                          width: 160.0,
-                          color: Colors.blue,
-                        ),
-                        Container(
-                          width: 160.0,
-                          color: Colors.green,
-                        ),
-                        Container(
-                          width: 160.0,
-                          color: Colors.yellow,
-                        ),
-                        Container(
-                          width: 160.0,
-                          color: Colors.orange,
-                        ),
+                        DoctorCards(),
+                        DoctorCards(),
+                        DoctorCards(),
+                        DoctorCards(),
+                        DoctorCards(),
                       ],
                     ),
                   ),
