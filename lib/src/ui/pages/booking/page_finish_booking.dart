@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:smkdev/main.dart';
 import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/ui/components/buttons/button_primary.dart';
-import 'package:smkdev/src/ui/pages/home/page_home_dashboard.dart';
 
 class FinishedBooking extends StatelessWidget {
   final String bookingCode;

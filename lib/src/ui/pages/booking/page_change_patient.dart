@@ -17,7 +17,6 @@ class _ChangePatientState extends State<ChangePatient> {
   int id;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     this.id = widget.id;
   }

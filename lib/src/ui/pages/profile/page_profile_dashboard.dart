@@ -9,7 +9,6 @@ class ProfileDashboard extends StatefulWidget {
 }
 
 class _ProfileDashboardState extends State<ProfileDashboard> {
-  @override
   bool read;
   bool active = true;
   Widget build(BuildContext context) {

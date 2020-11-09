@@ -37,6 +37,7 @@ class _BookingConfirmState extends State<BookingConfirm> {
         kelamin = "Perempuan";
       }
 
+      // ignore: unnecessary_brace_in_string_interps
       userList.add(User.withId(i, "Name $i", "email${i}@gmail.com", kelamin,
           status, "08212345678$i"));
     }
@@ -44,7 +45,6 @@ class _BookingConfirmState extends State<BookingConfirm> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     this.getDummyUser();
   }

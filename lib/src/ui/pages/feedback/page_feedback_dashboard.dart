@@ -3,9 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/ui/components/buttons/button_primary.dart';
-import 'package:smkdev/src/ui/pages/about-app/page_about_app.dart';
-
-import '../tentang/page_tentang_dashboard.dart';
 
 class FeedbackDashboard extends StatefulWidget {
   @override
@@ -33,21 +30,14 @@ class _FeedbackDashboardState extends State<FeedbackDashboard> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.info,
-              color: Colors.black,
-            ),
-            tooltip: "Tentang Aplikasi Ini",
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => AboutAppPage()),
-              );
-            },
-          )
-        ],
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios),
+          onPressed: () {
+            print('back');
+            Navigator.pop(context);
+          },
+          color: Colors.black87,
+        ),
       ),
       body: Form(
         child: ListView(

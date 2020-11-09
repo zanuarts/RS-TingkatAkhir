@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AboutAppPage extends StatefulWidget {
+class AboutDashboard extends StatefulWidget {
   @override
-  _AboutAppState createState() => _AboutAppState();
+  _AboutDashboardState createState() => _AboutDashboardState();
 }
 
-class _AboutAppState extends State<AboutAppPage> {
+class _AboutDashboardState extends State<AboutDashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
