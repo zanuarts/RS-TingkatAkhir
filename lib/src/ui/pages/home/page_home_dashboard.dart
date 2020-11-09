@@ -99,10 +99,46 @@ class _HomeDashboardState extends State<HomeDashboard> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(20, 10, 20, 30),
-              child: Text(
-                "Rumah Sakit SMKDEV \nJl. Margacinta No. 29 \n\ninfo@smk.dev \n\n+622 7000 0000 \t+622 7000 0000",
-              ),
+              padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+              child: Row(
+                children: [
+                  Icon(Icons.location_on_outlined),
+                  SizedBox(width:10),
+                  Text(
+                      "Rumah Sakit Tingkat Akhir \nJl. Margacinta No. 29",
+                      ),
+                ],
+              )
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+              child: Row(
+                children: [
+                  Icon(Icons.email_outlined),
+                  SizedBox(width:10),
+                  Text(
+                      "info@smk.dev",
+                      ),
+                ],
+              )
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(20, 10, 20,30),
+              child: Row(
+                children: [
+                  Icon(Icons.phone_callback_outlined),
+                  SizedBox(width:10),
+                  Text(
+                      "+622 7000 0000",
+                      ),
+                  SizedBox(width:30),
+                  Icon(Icons.location_city_outlined),
+                  SizedBox(width:10),
+                  Text(
+                      "+622 7000 0000",
+                      ),
+                ],
+              )
             ),
         ]
       ),
