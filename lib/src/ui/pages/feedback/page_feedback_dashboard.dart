@@ -28,10 +28,10 @@ class _FeedbackDashboardState extends State<FeedbackDashboard> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         elevation: 0.0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios),
+          icon: Icon(Icons.arrow_back),
           onPressed: () {
             print('back');
             Navigator.pop(context);
