@@ -38,7 +38,7 @@ class _MainBottomNavState extends State<MainBottomNav> {
       case 4:
         await showMenu(
           context: context,
-          position: RelativeRect.fromLTRB(1000.0, 450.0, 0.0, 0.0),
+          position: RelativeRect.fromLTRB(1000.0,850.0, 0.0, 0.0),
           elevation: 0,
           color: Colors.transparent,
           items: [
