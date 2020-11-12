@@ -71,7 +71,10 @@ class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CircleAvatar(radius: 70),
+                CircleAvatar(
+                  backgroundImage: AssetImage('assets/images/doctor.png'),
+                  backgroundColor: Colors.white,
+                  radius: 70),
                 SizedBox(height: 10),
                 Text(
                   widget.doctor.name,

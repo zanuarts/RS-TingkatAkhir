@@ -20,86 +20,91 @@ class _MainBottomNavState extends State<MainBottomNav> {
   int _selectedIndex = 0;
   int currentIndex = 0;
   String text = 'Home';
-
   Future<void> _onItemTapped(int index) async {
     switch (index) {
       case 0:
-        setState((){ _selectedIndex = index;});
+        setState(() {
+          _selectedIndex = index;
+        });
         break;
       case 1:
-        setState((){ _selectedIndex = index;});
+        setState(() {
+          _selectedIndex = index;
+        });
         break;
       case 2:
-        setState((){ _selectedIndex = index;});
+        setState(() {
+          _selectedIndex = index;
+        });
         break;
       case 3:
-        setState((){ _selectedIndex = index;});
+        setState(() {
+          _selectedIndex = index;
+        });
         break;
       case 4:
         await showMenu(
           context: context,
-          position: RelativeRect.fromLTRB(1000.0, 450.0, 0.0, 0.0),
+          position: RelativeRect.fromLTRB(
+              MediaQuery.of(context).size.width, MediaQuery.of(context).size.height * 0.7, 0.0, 0.0),
           elevation: 0,
           color: Colors.transparent,
           items: [
             PopupMenuItem(
-              value: null,
-              child:Container(
-                margin: EdgeInsets.all(2),
-                width: 160,
-                child: RaisedButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadiusDirectional.circular(20)
-                  ),
-                  onPressed: (){
-                    print("tentang kami pressed");
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => AboutDashboard()),
-                    );
-                  },
-                  color: colorPrimary,
-                  child: Row(
-                    children: [
-                      Text("Tentang Kami",
-                        style: TextStyle(
-                          color: Colors.white
+                value: null,
+                child: Container(
+                  margin: EdgeInsets.all(2),
+                  width: 160,
+                  child: RaisedButton(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadiusDirectional.circular(20)),
+                    onPressed: () {
+                      print("tentang kami pressed");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AboutDashboard()),
+                      );
+                    },
+                    color: colorPrimary,
+                    child: Row(
+                      children: [
+                        Text(
+                          "Tentang Kami",
+                          style: TextStyle(color: Colors.white),
                         ),
-                      ),
-                      SizedBox(width:5),
-                      Icon(
-                        Icons.group_outlined,
-                        color: Colors.white,
-                      )
-                    ],
+                        SizedBox(width: 5),
+                        Icon(
+                          Icons.group_outlined,
+                          color: Colors.white,
+                        )
+                      ],
+                    ),
                   ),
-                ),
-              )
-            ),
+                )),
             PopupMenuItem(
               child: Container(
                 margin: EdgeInsets.all(2),
                 width: 180,
                 child: RaisedButton(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadiusDirectional.circular(20)
-                  ),
-                  onPressed: (){
+                      borderRadius: BorderRadiusDirectional.circular(20)),
+                  onPressed: () {
                     print("partner & career pressed");
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PartnerDashboard()),
+                      MaterialPageRoute(
+                          builder: (context) => PartnerDashboard()),
                     );
                   },
                   color: colorPrimary,
                   child: Row(
                     children: [
-                      Text("Partner & Career",
-                        style: TextStyle(
-                          color: Colors.white
-                        ),
+                      Text(
+                        "Partner & Career",
+                        style: TextStyle(color: Colors.white),
                       ),
-                      SizedBox(width:5),
+                      SizedBox(width: 5),
                       Icon(
                         Icons.group_outlined,
                         color: Colors.white,
@@ -115,24 +120,23 @@ class _MainBottomNavState extends State<MainBottomNav> {
                 width: 130,
                 child: RaisedButton(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadiusDirectional.circular(20)
-                  ),
-                  onPressed: (){
+                      borderRadius: BorderRadiusDirectional.circular(20)),
+                  onPressed: () {
                     print("feedback pressed");
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FeedbackDashboard()),
+                      MaterialPageRoute(
+                          builder: (context) => FeedbackDashboard()),
                     );
                   },
                   color: colorPrimary,
                   child: Row(
                     children: [
-                      Text("Feedback",
-                        style: TextStyle(
-                          color: Colors.white
-                        ),
+                      Text(
+                        "Feedback",
+                        style: TextStyle(color: Colors.white),
                       ),
-                      SizedBox(width:5),
+                      SizedBox(width: 5),
                       Icon(
                         Icons.group_outlined,
                         color: Colors.white,
@@ -146,7 +150,9 @@ class _MainBottomNavState extends State<MainBottomNav> {
         );
         break;
       default:
-        setState((){ _selectedIndex = index;});
+        setState(() {
+          _selectedIndex = index;
+        });
     }
   }
 
