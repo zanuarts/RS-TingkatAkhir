@@ -81,19 +81,42 @@ class _ProfileDashboardState extends State<ProfileDashboard> {
                                     active = true;
                                   });
                                 },
-                                child: Container(
-                                    width: 120,
-                                    padding: EdgeInsets.symmetric(vertical: 10),
-                                    decoration: BoxDecoration(
-                                        color: active
-                                            ? Colors.white
-                                            : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(5)),
-                                    child: Center(
-                                        child: Text(
-                                      "Notifikasi",
-                                      style: TextStyle(color: Colors.black),
-                                    ))),
+                                child: Stack(
+                                  children: [
+                                    Container(
+                                        width: 120,
+                                        padding:
+                                            EdgeInsets.symmetric(vertical: 10),
+                                        decoration: BoxDecoration(
+                                            color: active
+                                                ? Colors.white
+                                                : Colors.transparent,
+                                            borderRadius:
+                                                BorderRadius.circular(5)),
+                                        child: Center(
+                                            child: Text(
+                                          "Notifikasi",
+                                          style: TextStyle(color: Colors.black),
+                                        ))),
+                                    Positioned(
+                                      top: 1.0,
+                                      right: 4.0,
+                                      child: Container(
+                                        padding:
+                                            EdgeInsets.symmetric(horizontal: 5),
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                            color: colorSecondary),
+                                        child: Text("2",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w500)),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                               GestureDetector(
                                 onTap: () {
@@ -101,19 +124,42 @@ class _ProfileDashboardState extends State<ProfileDashboard> {
                                     active = false;
                                   });
                                 },
-                                child: Container(
-                                    width: 120,
-                                    padding: EdgeInsets.symmetric(vertical: 10),
-                                    decoration: BoxDecoration(
-                                        color: !active
-                                            ? Colors.white
-                                            : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(5)),
-                                    child: Center(
-                                        child: Text(
-                                      "Histori",
-                                      style: TextStyle(color: Colors.black),
-                                    ))),
+                                child: Stack(
+                                  children: [
+                                    Container(
+                                        width: 120,
+                                        padding:
+                                            EdgeInsets.symmetric(vertical: 10),
+                                        decoration: BoxDecoration(
+                                            color: !active
+                                                ? Colors.white
+                                                : Colors.transparent,
+                                            borderRadius:
+                                                BorderRadius.circular(5)),
+                                        child: Center(
+                                            child: Text(
+                                          "Histori",
+                                          style: TextStyle(color: Colors.black),
+                                        ))),
+                                    Positioned(
+                                      top: 1.0,
+                                      right: 4.0,
+                                      child: Container(
+                                        padding:
+                                            EdgeInsets.symmetric(horizontal: 5),
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                            color: colorSecondary),
+                                        child: Text("2",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w500)),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               )
                             ],
                           ),
