@@ -73,7 +73,7 @@ class _MorePopState extends State<MorePop> with SingleTickerProviderStateMixin{
     isOpened = !isOpened;
   }
 
-  Widget add() {
+  Widget about() {
     return new Container(
       margin: EdgeInsets.all(2),
       width: 160,
@@ -107,7 +107,7 @@ class _MorePopState extends State<MorePop> with SingleTickerProviderStateMixin{
     );
   }
 
-  Widget image() {
+  Widget partner() {
     return new Container(
       margin: EdgeInsets.all(2),
       width: 180,
@@ -141,7 +141,7 @@ class _MorePopState extends State<MorePop> with SingleTickerProviderStateMixin{
     );
   }
 
-  Widget inbox() {
+  Widget feedback() {
     return new Container(
       margin: EdgeInsets.all(1),
       width: 130,
@@ -191,8 +191,9 @@ class _MorePopState extends State<MorePop> with SingleTickerProviderStateMixin{
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
+    return Container(
+      child: Column(
+      // mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
         Transform(
           transform: Matrix4.translationValues(
@@ -200,7 +201,7 @@ class _MorePopState extends State<MorePop> with SingleTickerProviderStateMixin{
             _translateButton.value * 3.0,
             0.0,
           ),
-          child: add(),
+          child: about(),
         ),
         Transform(
           transform: Matrix4.translationValues(
@@ -208,7 +209,7 @@ class _MorePopState extends State<MorePop> with SingleTickerProviderStateMixin{
             _translateButton.value * 2.0,
             0.0,
           ),
-          child: image(),
+          child: partner(),
         ),
         Transform(
           transform: Matrix4.translationValues(
@@ -216,10 +217,11 @@ class _MorePopState extends State<MorePop> with SingleTickerProviderStateMixin{
             _translateButton.value,
             0.0,
           ),
-          child: inbox(),
+          child: feedback(),
         ),
         toggle(),
       ],
+      )
     );
   }
 }
