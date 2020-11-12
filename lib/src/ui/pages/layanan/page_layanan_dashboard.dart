@@ -19,19 +19,19 @@ class _LayananDashboardState extends State<LayananDashboard> {
             nama: "Ruang Operasi",
             shortDesc: "abc",
             deskripsi: "bab",
-            image: "assets/images/medicine_01.jpg"),
+            image: "assets/images/ruang_operasi.jpg"),
         Layanan(
             id: 1,
             nama: "Ruang Pemeriksaan",
             shortDesc: "abc",
             deskripsi: "bab",
-            image: "assets/images/medicine_01.jpg"),
+            image: "assets/images/ruang_periksa.jpg"),
         Layanan(
             id: 1,
             nama: "Ruang Tunggu Pasien",
             shortDesc: "abc",
             deskripsi: "bab",
-            image: "assets/images/medicine_01.jpg"),
+            image: "assets/images/ruang_tunggu.jpeg"),
       ];
 
   get getEvents => [
