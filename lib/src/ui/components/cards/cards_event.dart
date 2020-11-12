@@ -55,24 +55,23 @@ class EventButtonItem extends StatelessWidget {
             child: Container(
               height: 200,
               alignment: Alignment.bottomLeft,
-              child: Padding(
+              child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(color: Colors.white),
                   padding: const EdgeInsets.only(left: 15, top: 15, bottom: 15),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
                         caption,
                         style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
+                            fontWeight: FontWeight.bold, fontSize: 15),
                       ),
                       Text(
                         event.shortDesc,
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
+                        style: TextStyle(),
                       )
                     ],
                   )),
@@ -80,7 +79,7 @@ class EventButtonItem extends StatelessWidget {
                 image: DecorationImage(
                     fit: BoxFit.cover,
                     colorFilter: ColorFilter.mode(
-                        Colors.black.withOpacity(0.8), BlendMode.dstATop),
+                        Colors.black.withOpacity(0.7), BlendMode.dstATop),
                     image: image),
               ),
             ),
