@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:smkdev/src/ui/pages/home/page_home_map.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class HomeMaps extends StatefulWidget {
   @override
