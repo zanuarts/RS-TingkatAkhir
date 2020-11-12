@@ -84,7 +84,10 @@ class _BookingConfirmState extends State<BookingConfirm> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  CircleAvatar(radius: 40),
+                  CircleAvatar(
+                      backgroundImage: AssetImage('assets/images/doctor.png'),
+                      backgroundColor: Colors.white,
+                      radius: 40),
                   SizedBox(height: 10),
                   Text(
                     widget.doctor.name,
