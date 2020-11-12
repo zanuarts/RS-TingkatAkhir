@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:smkdev/src/models/doctor.dart';
 import 'package:smkdev/src/ui/pages/booking/page_dokter_detail.dart';
 import 'package:smkdev/src/ui/widgets/booking/widget_booking_item.dart';
-import 'package:smkdev/src/ui/widgets/booking/widget_header_booking.dart';
+import 'package:smkdev/src/ui/widgets/widget_header.dart';
 
 class BookingDashboard extends StatefulWidget {
   const BookingDashboard({Key key, this.doctorList}) : super(key: key);
@@ -14,7 +14,6 @@ class BookingDashboard extends StatefulWidget {
 }
 
 class _BookingDashboardState extends State<BookingDashboard> {
-  
   @override
   void initState() {
     super.initState();
@@ -27,14 +26,16 @@ class _BookingDashboardState extends State<BookingDashboard> {
       backgroundColor: Colors.grey[100],
       body: Column(
         children: [
-          HeaderBooking(size: size),
+          HeaderWidget(
+            size: size,
+            title: "Booking",
+          ),
           widget.doctorList.length == 0
               ? CircularProgressIndicator()
               : Expanded(
                   child: ListView.builder(
                   itemCount: widget.doctorList.length,
                   itemBuilder: (BuildContext context, int index) {
-                    // TODO : Data that send to booking detail is Object of "Doctor" or just id of the "Doctor"
                     return BookingItem(
                       doctor: widget.doctorList[index],
                       clickBack: () {
