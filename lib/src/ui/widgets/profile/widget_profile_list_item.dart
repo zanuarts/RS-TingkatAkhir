@@ -55,7 +55,7 @@ class ProfileListItem extends StatelessWidget {
                           fontWeight: FontWeight.w400, fontSize: 12),
                       ),
                     ),
-                    SizedBox(height: 25),
+                    SizedBox(height: 15),
                     Container(
                       width: 300,
                       child: Row(

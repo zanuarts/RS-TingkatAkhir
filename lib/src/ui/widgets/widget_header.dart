@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
 
-class HeaderBooking extends StatelessWidget {
-  const HeaderBooking({
+class HeaderWidget extends StatelessWidget {
+  const HeaderWidget({
     Key key,
     @required this.size,
+    this.title,
   }) : super(key: key);
 
   final Size size;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class HeaderBooking extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(top: 50, bottom: 20),
                 child: Text(
-                  "Booking",
+                  title,
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 30,
@@ -70,7 +72,9 @@ class HeaderBooking extends StatelessWidget {
                           focusedBorder: InputBorder.none),
                     ),
                   ),
-                  IconButton(icon: Icon(Icons.search, color: colorPrimary), onPressed: () {})
+                  IconButton(
+                      icon: Icon(Icons.search, color: colorPrimary),
+                      onPressed: () {})
                 ],
               ),
             ),
