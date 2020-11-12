@@ -1,16 +1,17 @@
 // To parse this JSON data, do
 //
-//     final layanan = layananFromJson(jsonString);
+//     final event = eventFromJson(jsonString);
 
 import 'package:meta/meta.dart';
 import 'dart:convert';
 
-class Layanan {
-  Layanan({
+class Event {
+  Event({
     @required this.id,
     @required this.nama,
     @required this.shortDesc,
     @required this.deskripsi,
+    @required this.tanggal,
     @required this.image,
   });
 
@@ -21,15 +22,16 @@ class Layanan {
   DateTime tanggal;
   String image;
 
-  factory Layanan.fromRawJson(String str) => Layanan.fromJson(json.decode(str));
+  factory Event.fromRawJson(String str) => Event.fromJson(json.decode(str));
 
   String toRawJson() => json.encode(toJson());
 
-  factory Layanan.fromJson(Map<String, dynamic> json) => Layanan(
+  factory Event.fromJson(Map<String, dynamic> json) => Event(
         id: json["id"],
         nama: json["nama"],
         shortDesc: json["short_desc"],
         deskripsi: json["deskripsi"],
+        tanggal: DateTime.parse(json["tanggal"]),
         image: json["image"],
       );
 
@@ -38,6 +40,7 @@ class Layanan {
         "nama": nama,
         "short_desc": shortDesc,
         "deskripsi": deskripsi,
+        "tanggal": tanggal.toIso8601String(),
         "image": image,
       };
 }

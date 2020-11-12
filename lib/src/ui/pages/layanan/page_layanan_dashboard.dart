@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smkdev/src/models/event.dart';
+import 'package:smkdev/src/models/layanan.dart';
+import 'package:smkdev/src/ui/components/cards/cards_event.dart';
+import 'package:smkdev/src/ui/components/cards/cards_layanan.dart';
 
 import '../../components/cards/cards_about.dart';
-import '../../components/cards/cards_doctor.dart';
 
 class LayananDashboard extends StatefulWidget {
   @override
@@ -10,6 +13,51 @@ class LayananDashboard extends StatefulWidget {
 }
 
 class _LayananDashboardState extends State<LayananDashboard> {
+  get getLayanan => [
+        Layanan(
+            id: 1,
+            nama: "Ruang Operasi",
+            shortDesc: "abc",
+            deskripsi: "bab",
+            image: "assets/images/medicine_01.jpg"),
+        Layanan(
+            id: 1,
+            nama: "Ruang Pemeriksaan",
+            shortDesc: "abc",
+            deskripsi: "bab",
+            image: "assets/images/medicine_01.jpg"),
+        Layanan(
+            id: 1,
+            nama: "Ruang Tunggu Pasien",
+            shortDesc: "abc",
+            deskripsi: "bab",
+            image: "assets/images/medicine_01.jpg"),
+      ];
+
+  get getEvents => [
+        Event(
+            id: 1,
+            nama: "Event 1",
+            shortDesc: "abc",
+            deskripsi: "bab",
+            image: "assets/images/medicine_01.jpg",
+            tanggal: DateTime.now()),
+        Event(
+            id: 1,
+            nama: "Event 1",
+            shortDesc: "abc",
+            deskripsi: "bab",
+            image: "assets/images/medicine_01.jpg",
+            tanggal: DateTime.now()),
+        Event(
+            id: 1,
+            nama: "Event 1",
+            shortDesc: "abc",
+            deskripsi: "bab",
+            image: "assets/images/medicine_01.jpg",
+            tanggal: DateTime.now()),
+      ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,19 +83,8 @@ class _LayananDashboardState extends State<LayananDashboard> {
                 ),
               ),
               Container(
-                height: 200,
-                child: ListView(
-                  // This next line does the trick.
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    DoctorCards(),
-                    DoctorCards(),
-                    DoctorCards(),
-                    DoctorCards(),
-                    DoctorCards(),
-                  ],
-                ),
-              ),
+                  height: 200,
+                  child: LayananButtonsWidget(list: this.getLayanan)),
               Divider(),
               Padding(
                 padding: EdgeInsets.fromLTRB(10, 10, 20, 10),
@@ -56,16 +93,7 @@ class _LayananDashboardState extends State<LayananDashboard> {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
               ),
-              ListView.builder(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: 3,
-                  itemBuilder: (context, i) {
-                    return Container(
-                      margin: EdgeInsets.only(bottom: 10),
-                      child: AboutCards(),
-                    );
-                  })
+              EventButtonsWidget(list: this.getEvents)
             ],
           ),
         ),
