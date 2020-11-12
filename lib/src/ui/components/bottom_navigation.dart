@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/models/doctor.dart';
 import 'package:smkdev/src/ui/components/more_popup.dart';
+import 'package:smkdev/src/ui/pages/about/page_about_app.dart';
 import 'package:smkdev/src/ui/pages/booking/page_booking_dashboard.dart';
+import 'package:smkdev/src/ui/pages/feedback/page_feedback_dashboard.dart';
 import 'package:smkdev/src/ui/pages/home/page_home_dashboard.dart';
 import 'package:smkdev/src/ui/pages/layanan/page_layanan_dashboard.dart';
+import 'package:smkdev/src/ui/pages/partner/page_partner_dashboard.dart';
 import 'package:smkdev/src/ui/pages/profile/page_profile_dashboard.dart';
 
 class MainBottomNav extends StatefulWidget {
@@ -16,11 +19,135 @@ class MainBottomNav extends StatefulWidget {
 class _MainBottomNavState extends State<MainBottomNav> {
   int _selectedIndex = 0;
   int currentIndex = 0;
+  String text = 'Home';
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+  Future<void> _onItemTapped(int index) async {
+    switch (index) {
+      case 0:
+        setState((){ _selectedIndex = index;});
+        break;
+      case 1:
+        setState((){ _selectedIndex = index;});
+        break;
+      case 2:
+        setState((){ _selectedIndex = index;});
+        break;
+      case 3:
+        setState((){ _selectedIndex = index;});
+        break;
+      case 4:
+        await showMenu(
+          context: context,
+          position: RelativeRect.fromLTRB(1000.0, 450.0, 0.0, 0.0),
+          elevation: 0,
+          color: Colors.transparent,
+          items: [
+            PopupMenuItem(
+              value: null,
+              child:Container(
+                margin: EdgeInsets.all(2),
+                width: 160,
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusDirectional.circular(20)
+                  ),
+                  onPressed: (){
+                    print("tentang kami pressed");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AboutDashboard()),
+                    );
+                  },
+                  color: colorPrimary,
+                  child: Row(
+                    children: [
+                      Text("Tentang Kami",
+                        style: TextStyle(
+                          color: Colors.white
+                        ),
+                      ),
+                      SizedBox(width:5),
+                      Icon(
+                        Icons.group_outlined,
+                        color: Colors.white,
+                      )
+                    ],
+                  ),
+                ),
+              )
+            ),
+            PopupMenuItem(
+              child: Container(
+                margin: EdgeInsets.all(2),
+                width: 180,
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusDirectional.circular(20)
+                  ),
+                  onPressed: (){
+                    print("partner & career pressed");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PartnerDashboard()),
+                    );
+                  },
+                  color: colorPrimary,
+                  child: Row(
+                    children: [
+                      Text("Partner & Career",
+                        style: TextStyle(
+                          color: Colors.white
+                        ),
+                      ),
+                      SizedBox(width:5),
+                      Icon(
+                        Icons.group_outlined,
+                        color: Colors.white,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            PopupMenuItem(
+              child: Container(
+                margin: EdgeInsets.all(1),
+                width: 130,
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusDirectional.circular(20)
+                  ),
+                  onPressed: (){
+                    print("feedback pressed");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => FeedbackDashboard()),
+                    );
+                  },
+                  color: colorPrimary,
+                  child: Row(
+                    children: [
+                      Text("Feedback",
+                        style: TextStyle(
+                          color: Colors.white
+                        ),
+                      ),
+                      SizedBox(width:5),
+                      Icon(
+                        Icons.group_outlined,
+                        color: Colors.white,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        );
+        break;
+      default:
+        setState((){ _selectedIndex = index;});
+    }
   }
 
   List<Doctor> doctorList = List<Doctor>();
@@ -55,7 +182,7 @@ class _MainBottomNavState extends State<MainBottomNav> {
       doctorList: doctorList,
     ));
     pageList.add(ProfileDashboard());
-    pageList.add(MorePop());
+    // pageList.add(MorePop());
     super.initState();
     this.getDummyDoctor();
   }
