@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/models/doctor.dart';
 import 'package:smkdev/src/ui/pages/booking/page_dokter_detail.dart';
-import 'package:smkdev/src/ui/widgets/booking/booking_item.dart';
-import 'package:smkdev/src/ui/widgets/booking/header_booking.dart';
+import 'package:smkdev/src/ui/widgets/booking/widget_booking_item.dart';
+import 'package:smkdev/src/ui/widgets/booking/widget_header_booking.dart';
 
 class BookingDashboard extends StatefulWidget {
   const BookingDashboard({Key key, this.doctorList}) : super(key: key);
