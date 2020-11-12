@@ -56,15 +56,26 @@ class EventButtonItem extends StatelessWidget {
               height: 200,
               alignment: Alignment.bottomLeft,
               child: Padding(
-                padding: const EdgeInsets.only(left: 15, top: 15, bottom: 15),
-                child: Text(
-                  caption,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15),
-                ),
-              ),
+                  padding: const EdgeInsets.only(left: 15, top: 15, bottom: 15),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        caption,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
+                      ),
+                      Text(
+                        event.shortDesc,
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      )
+                    ],
+                  )),
               decoration: new BoxDecoration(
                 image: DecorationImage(
                     fit: BoxFit.cover,
