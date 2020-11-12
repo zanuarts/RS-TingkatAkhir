@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
-import 'package:smkdev/src/ui/widgets/profile/profile_list_item.dart';
+import 'package:smkdev/src/ui/widgets/profile/widget_profile_list_item.dart';
 
 class ProfileDashboard extends StatefulWidget {
   @override

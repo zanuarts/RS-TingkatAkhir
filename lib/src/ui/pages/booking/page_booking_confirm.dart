@@ -7,7 +7,7 @@ import 'package:smkdev/src/models/doctor.dart';
 import 'package:smkdev/src/models/user.dart';
 import 'package:smkdev/src/ui/pages/booking/page_change_patient.dart';
 import 'package:smkdev/src/ui/pages/booking/page_finish_booking.dart';
-import 'package:smkdev/src/ui/widgets/booking/bottom_nav.dart';
+import 'package:smkdev/src/ui/widgets/booking/widget_bottom_nav.dart';
 
 class BookingConfirm extends StatefulWidget {
   const BookingConfirm({Key key, this.doctor}) : super(key: key);
