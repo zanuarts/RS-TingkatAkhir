@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
+import 'package:smkdev/src/ui/pages/profile/page_profile_detail.dart';
 
 class ProfileListItem extends StatelessWidget {
   const ProfileListItem({
@@ -17,7 +18,15 @@ class ProfileListItem extends StatelessWidget {
   final String title, subtitle, waktu, badge;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return GestureDetector(
+      onTap: (){
+        print("notif pressed");
+        Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ProfileDetail()),
+        );
+      }, 
+      child:Container(
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(color: read ? Colors.white : Colors.grey[100]),
       child: Container(
@@ -100,6 +109,7 @@ class ProfileListItem extends StatelessWidget {
           ],
         ),
       ),
+    ),
     );
   }
 }
