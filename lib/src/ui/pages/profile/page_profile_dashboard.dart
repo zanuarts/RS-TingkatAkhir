@@ -41,12 +41,9 @@ class _ProfileDashboardState extends State<ProfileDashboard> {
                     margin: EdgeInsets.only(top: 50),
                     padding: EdgeInsets.only(bottom: 20, top: 80),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: Colors.white,
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/lars_bak.png'),
-                          fit: BoxFit.cover),
-                        ),
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.white,
+                    ),
                     child: Column(
                       children: [
                         Text(
@@ -235,8 +232,12 @@ class _ProfileDashboardState extends State<ProfileDashboard> {
                           height: 100,
                           width: 100,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.grey),
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.grey,
+                            image: DecorationImage(
+                                image: AssetImage('assets/images/lars_bak.png'),
+                                fit: BoxFit.cover),
+                          ),
                         ),
                       )),
                 ],
