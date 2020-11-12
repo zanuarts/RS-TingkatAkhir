@@ -22,6 +22,8 @@ class BookingItem extends StatelessWidget {
         child: Row(
           children: [
             CircleAvatar(
+              backgroundImage: AssetImage('assets/images/doctor.png'),
+              backgroundColor: Colors.white,
               radius: 30,
             ),
             SizedBox(

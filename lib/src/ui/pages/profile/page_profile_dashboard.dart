@@ -42,7 +42,11 @@ class _ProfileDashboardState extends State<ProfileDashboard> {
                     padding: EdgeInsets.only(bottom: 20, top: 80),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        color: Colors.white),
+                        color: Colors.white,
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/lars_bak.png'),
+                          fit: BoxFit.cover),
+                        ),
                     child: Column(
                       children: [
                         Text(
