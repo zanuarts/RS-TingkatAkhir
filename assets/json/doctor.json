@@ -1,0 +1,27 @@
+[
+    {
+        "id":"1",
+        "name":"Dr. Pratama Yoga S",
+        "specialist":"Dokter Umum"
+    },
+    {
+        "id":"2",
+        "name":"Dr. Agung Satrio",
+        "specialist":"Spesialis Syaraf"
+    },
+    {
+        "id":"3",
+        "name":"Dr. Zanuar",
+        "specialist":"Spesialis Mata"
+    },
+    {
+        "id":"1",
+        "name":"Dr. Nina Nadia",
+        "specialist":"Spesialis Telinga"
+    },
+    {
+        "id":"1",
+        "name":"Dr. Vladimir Putin",
+        "specialist":"Dokter Gigi"
+    }
+]
