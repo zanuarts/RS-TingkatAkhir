@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:smkdev/src/models/doctor.dart';
 
-class DoctorCards extends StatelessWidget {
+class DoctorCards extends StatefulWidget {
+  final Doctor doctor;
+  const DoctorCards({Key key, this.doctor}) : super(key: key);
+
+  @override
+  _DoctorCardsState createState() => _DoctorCardsState();
+}
+
+class _DoctorCardsState extends State<DoctorCards> {
   @override
   Widget build(BuildContext context) {
+    String _name = "news title";
+    String _spes = "null";
+
     return Container(
         margin: EdgeInsets.only(right: 10, bottom: 5),
         height: 160,
@@ -39,21 +51,24 @@ class DoctorCards extends StatelessWidget {
                           fit: BoxFit.cover),
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(10, 15, 10, 0),
-                    child: Text(
-                      "Heading Bro",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
+              Container(
+                margin: EdgeInsets.fromLTRB(10,15,10,0),
+                child: Text(
+                  _name,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold
                   ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(10, 5, 10, 0),
-                    child: Text("Heading Bro"),
-                  ),
-                ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.fromLTRB(10,5,10,0),
+                child: Text(
+                  _spes
+                ),
               ),
             ],
           ),
-        ));
+            ])));
+
   }
 }

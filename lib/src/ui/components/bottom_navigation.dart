@@ -44,8 +44,10 @@ class _MainBottomNavState extends State<MainBottomNav> {
       case 4:
         await showMenu(
           context: context,
-          position: RelativeRect.fromLTRB(MediaQuery.of(context).size.width,
-              MediaQuery.of(context).size.height * 0.7, 0.0, 0.0),
+
+          position: RelativeRect.fromLTRB(
+              MediaQuery.of(context).size.width, MediaQuery.of(context).size.height * 0.7, 0.0, 0.0),
+
           elevation: 0,
           color: Colors.transparent,
           items: [
@@ -105,7 +107,7 @@ class _MainBottomNavState extends State<MainBottomNav> {
                       ),
                       SizedBox(width: 5),
                       Icon(
-                        Icons.group_outlined,
+                        Icons.work_outline,
                         color: Colors.white,
                       )
                     ],
@@ -137,7 +139,7 @@ class _MainBottomNavState extends State<MainBottomNav> {
                       ),
                       SizedBox(width: 5),
                       Icon(
-                        Icons.group_outlined,
+                        Icons.feedback_outlined,
                         color: Colors.white,
                       )
                     ],
