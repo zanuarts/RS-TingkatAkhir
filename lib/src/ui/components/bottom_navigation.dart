@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/models/doctor.dart';
-import 'package:smkdev/src/ui/components/more_popup.dart';
 import 'package:smkdev/src/ui/pages/about/page_about_app.dart';
 import 'package:smkdev/src/ui/pages/booking/page_booking_dashboard.dart';
 import 'package:smkdev/src/ui/pages/feedback/page_feedback_dashboard.dart';
