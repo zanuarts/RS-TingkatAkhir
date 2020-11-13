@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:smkdev/src/ui/pages/home/page_home_map.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeMaps extends StatefulWidget {
   @override
@@ -66,8 +68,12 @@ class _HomeMapsState extends State<HomeMaps> {
             left: 10,
             child: GestureDetector(
               onTap:(){
-                print("map tapped!");
-              },
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomeMap()),
+                  );
+                },
               child: Container(
               height: 90,
               width: 350,
@@ -84,12 +90,16 @@ class _HomeMapsState extends State<HomeMaps> {
                       width: 90,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        color: Colors.red,
+                        // color: Colors.red,
                         boxShadow: [BoxShadow(
                           color: Colors.black.withOpacity(0.2),
                           blurRadius: 6,
                           offset: Offset(1,1)
                         )]
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image.asset('assets/images/map_hos.jpg'),
                       ),
                     ),
                     SizedBox(width:10),

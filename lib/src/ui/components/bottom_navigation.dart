@@ -106,7 +106,7 @@ class _MainBottomNavState extends State<MainBottomNav> {
                       ),
                       SizedBox(width: 5),
                       Icon(
-                        Icons.group_outlined,
+                        Icons.work_outline,
                         color: Colors.white,
                       )
                     ],
@@ -138,7 +138,7 @@ class _MainBottomNavState extends State<MainBottomNav> {
                       ),
                       SizedBox(width: 5),
                       Icon(
-                        Icons.group_outlined,
+                        Icons.feedback_outlined,
                         color: Colors.white,
                       )
                     ],
