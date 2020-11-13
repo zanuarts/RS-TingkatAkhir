@@ -43,9 +43,7 @@ class _ProfileDashboardState extends State<ProfileDashboard> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         color: Colors.white,
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/lars_bak.png'),
-                          fit: BoxFit.cover),
+                        
                         ),
                     child: Column(
                       children: [
