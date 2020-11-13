@@ -51,7 +51,6 @@ class _DoctorCardsState extends State<DoctorCards> {
                           fit: BoxFit.cover),
                     ),
                   ),
-                  
               Container(
                 margin: EdgeInsets.fromLTRB(10,15,10,0),
                 child: Text(
@@ -70,5 +69,6 @@ class _DoctorCardsState extends State<DoctorCards> {
             ],
           ),
             ])));
+
   }
 }
