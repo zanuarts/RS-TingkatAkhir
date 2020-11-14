@@ -1,12 +1,11 @@
 class User {
-  int _id;
-  String _name, _email, _kelamin, _status, _telephone;
+  String _id, _name, _email, _kelamin, _status, _telephone;
 
   User(this._name, this._email, this._kelamin, this._status, this._telephone);
   User.withId(this._id, this._name, this._email, this._kelamin, this._status,
       this._telephone);
 
-  int get id => _id;
+  String get id => _id;
   String get name => _name;
   String get email => _email;
   String get kelamin => _kelamin;
@@ -57,7 +56,7 @@ class User {
     return map;
   }
 
-  User.fromMapObject(Map<String, dynamic> map) {
+  User.fromJson(Map<String, dynamic> map) {
     this._id = map['id'];
     this._name = map['name'];
     this._email = map['email'];

@@ -1,24 +1,38 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/models/user.dart';
 import 'package:smkdev/src/ui/components/dialog_form.dart';
 
 class ChangePatient extends StatefulWidget {
-  const ChangePatient({Key key, this.userList, this.id}) : super(key: key);
+  const ChangePatient({Key key, this.id}) : super(key: key);
 
   @override
   _ChangePatientState createState() => _ChangePatientState();
 
-  final List<User> userList;
-  final int id;
+  final String id;
 }
 
 class _ChangePatientState extends State<ChangePatient> {
-  int id;
+  String id;
   @override
   void initState() {
     super.initState();
     this.id = widget.id;
+    this.getDummyUser();
+  }
+
+  List<User> userList = List<User>();
+  void getDummyUser() async {
+    var jsonData = await rootBundle.loadString("assets/json/user.json");
+    var decodedJson = json.decode(jsonData);
+    setState(() {
+      for (int i = 0; i < decodedJson.length; i++) {
+        userList.add(User.fromJson(decodedJson[i]));
+      }
+    });
   }
 
   @override
@@ -36,7 +50,7 @@ class _ChangePatientState extends State<ChangePatient> {
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
       ),
-      body: widget.userList.length == 0
+      body: userList.length == 0
           ? CircularProgressIndicator()
           : Column(
               children: [
@@ -44,17 +58,16 @@ class _ChangePatientState extends State<ChangePatient> {
                   maxHeight: size.height * 0.8,
                   child: ListView.builder(
                       shrinkWrap: true,
-                      itemCount: widget.userList.length,
+                      itemCount: userList.length,
                       itemBuilder: (context, index) => PatientListItem(
-                            user: widget.userList[index],
-                            selected: widget.userList[index].id == this.id
-                                ? true
-                                : false,
+                            user: userList[index],
+                            selected:
+                                userList[index].id == this.id ? true : false,
                             callbackFunction: () {
                               setState(() {
-                                this.id = widget.userList[index].id;
+                                this.id = userList[index].id;
                               });
-                              Navigator.pop(context, this.id);
+                              Navigator.pop(context, userList[index]);
                             },
                           )),
                 ),

@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:random_string/random_string.dart';
@@ -10,43 +13,25 @@ import 'package:smkdev/src/ui/pages/booking/page_finish_booking.dart';
 import 'package:smkdev/src/ui/widgets/booking/widget_bottom_nav.dart';
 
 class BookingConfirm extends StatefulWidget {
-  const BookingConfirm({Key key, this.doctor}) : super(key: key);
+  const BookingConfirm({Key key, this.doctor, this.user}) : super(key: key);
 
   @override
   _BookingConfirmState createState() => _BookingConfirmState();
 
   final HomeDoctor doctor;
+  final User user;
 }
 
 class _BookingConfirmState extends State<BookingConfirm> {
   DateTime _date = DateTime.now();
 
-  List<User> userList = List<User>();
   int selectedIndex = 0;
-
-  void getDummyUser() {
-    String kelamin = "Laki-laki";
-    String status = "Kamu";
-
-    for (var i = 0; i < 3; i++) {
-      if (i % 2 == 0) {
-        kelamin = "Laki-laki";
-        status = "Anak";
-      } else if (i % 1 == 0) {
-        status = "Ibu";
-        kelamin = "Perempuan";
-      }
-
-      // ignore: unnecessary_brace_in_string_interps
-      userList.add(User.withId(i, "Name $i", "email${i}@gmail.com", kelamin,
-          status, "08212345678$i"));
-    }
-  }
+  User selectedUser;
 
   @override
   void initState() {
     super.initState();
-    this.getDummyUser();
+    selectedUser = widget.user;
   }
 
   @override
@@ -158,14 +143,14 @@ class _BookingConfirmState extends State<BookingConfirm> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          userList[this.selectedIndex].name,
+                                          selectedUser.name,
                                           style: TextStyle(
                                               color: colorLabel1,
                                               fontSize: 16,
                                               fontWeight: FontWeight.bold),
                                         ),
                                         Text(
-                                          "${userList[this.selectedIndex].status} | ${userList[this.selectedIndex].kelamin}",
+                                          "${selectedUser.status} | ${selectedUser.kelamin}",
                                           style: TextStyle(
                                               color: Colors.black87,
                                               fontSize: 12,
@@ -183,13 +168,11 @@ class _BookingConfirmState extends State<BookingConfirm> {
                                           MaterialPageRoute(
                                               builder: (context) =>
                                                   ChangePatient(
-                                                      id: this.selectedIndex,
-                                                      userList:
-                                                          userList))).then(
-                                          (value) {
+                                                    id: selectedUser.id,
+                                                  ))).then((value) {
                                         if (value != null) {
                                           setState(() {
-                                            this.selectedIndex = value;
+                                            this.selectedUser = value;
                                           });
                                         }
                                       });
