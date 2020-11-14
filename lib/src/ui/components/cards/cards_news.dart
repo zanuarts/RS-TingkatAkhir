@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:smkdev/src/models/news.dart';
 
-class NewsCards extends StatelessWidget {
+class NewsCards extends StatefulWidget {
+  final News news;
+
+  const NewsCards({Key key, this.news}) : super(key: key);
+  @override
+  _NewsCardsState createState() => _NewsCardsState();
+}
+
+class _NewsCardsState extends State<NewsCards> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -36,7 +45,7 @@ class NewsCards extends StatelessWidget {
                     topRight: Radius.circular(10)
                   ),
                   image: DecorationImage(
-                    image: AssetImage('assets/images/medicine_01.jpg'),
+                    image: AssetImage(widget.news.image),
                     fit: BoxFit.cover
                   ),
                 ),
@@ -44,7 +53,7 @@ class NewsCards extends StatelessWidget {
               Container(
                 margin: EdgeInsets.fromLTRB(10,15,10,0),
                 child: Text(
-                  "Heading Bro",
+                  widget.news.title,
                   style: TextStyle(
                     fontWeight: FontWeight.bold
                   ),
@@ -53,7 +62,7 @@ class NewsCards extends StatelessWidget {
               Container(
                 margin: EdgeInsets.fromLTRB(10,5,10,0),
                 child: Text(
-                  "Heading Bro"
+                  widget.news.date
                 ),
               ),
             ],
