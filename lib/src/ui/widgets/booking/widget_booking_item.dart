@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:smkdev/src/models/doctor.dart';
 import 'package:smkdev/src/models/home_doctor.dart';
 
 class BookingItem extends StatelessWidget {

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
-import 'package:smkdev/src/models/doctor.dart';
 import 'package:smkdev/src/models/home_doctor.dart';
 import 'package:smkdev/src/models/user.dart';
 import 'package:smkdev/src/ui/widgets/booking/widget_bottom_nav.dart';
@@ -73,7 +72,7 @@ class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/doctor.png'),
+                    backgroundImage: AssetImage(widget.doctor.photos),
                     backgroundColor: Colors.white,
                     radius: 70),
                 SizedBox(height: 10),

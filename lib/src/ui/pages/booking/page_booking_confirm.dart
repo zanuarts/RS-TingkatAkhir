@@ -3,7 +3,6 @@ import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:random_string/random_string.dart';
 import 'package:smkdev/src/constants/constant.dart';
-import 'package:smkdev/src/models/doctor.dart';
 import 'package:smkdev/src/models/home_doctor.dart';
 import 'package:smkdev/src/models/user.dart';
 import 'package:smkdev/src/ui/pages/booking/page_change_patient.dart';
@@ -86,7 +85,7 @@ class _BookingConfirmState extends State<BookingConfirm> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/doctor.png'),
+                      backgroundImage: AssetImage(widget.doctor.photos),
                       backgroundColor: Colors.white,
                       radius: 40),
                   SizedBox(height: 10),
