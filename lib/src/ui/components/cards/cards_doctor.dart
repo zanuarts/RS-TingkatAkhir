@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/models/doctor.dart';
+import 'package:smkdev/src/models/home_doctor.dart';
 
 class DoctorCards extends StatefulWidget {
-  final Doctor doctor;
-  const DoctorCards({Key key, this.doctor}) : super(key: key);
+  final HomeDoctor homeDoctor;
+
+  const DoctorCards({Key key, this.homeDoctor}) : super(key: key);
 
   @override
   _DoctorCardsState createState() => _DoctorCardsState();
@@ -12,9 +14,6 @@ class DoctorCards extends StatefulWidget {
 class _DoctorCardsState extends State<DoctorCards> {
   @override
   Widget build(BuildContext context) {
-    String _name = "news title";
-    String _spes = "null";
-
     return Container(
         margin: EdgeInsets.only(right: 10, bottom: 5),
         height: 160,
@@ -47,14 +46,14 @@ class _DoctorCardsState extends State<DoctorCards> {
                           topLeft: Radius.circular(10),
                           topRight: Radius.circular(10)),
                       image: DecorationImage(
-                          image: AssetImage('assets/images/medicine_01.jpg'),
+                          image: AssetImage(widget.homeDoctor.photos),
                           fit: BoxFit.cover),
                     ),
                   ),
               Container(
                 margin: EdgeInsets.fromLTRB(10,15,10,0),
                 child: Text(
-                  _name,
+                  widget.homeDoctor.name,
                   style: TextStyle(
                     fontWeight: FontWeight.bold
                   ),
@@ -63,7 +62,7 @@ class _DoctorCardsState extends State<DoctorCards> {
               Container(
                 margin: EdgeInsets.fromLTRB(10,5,10,0),
                 child: Text(
-                  _spes
+                  widget.homeDoctor.specialist
                 ),
               ),
             ],
