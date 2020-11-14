@@ -21,12 +21,12 @@
         "id":"1",
         "name":"Dr. Nina Nadia",
         "specialist":"Spesialis Telinga",
-        "photos":"assets/images/doctor_4.jpg"
+        "photos":"assets/images/doctor_5.jpg"
     },
     {
         "id":"1",
         "name":"Dr. Vladimir Putin",
         "specialist":"Dokter Gigi",
-        "photos":"assets/images/doctor_5.jpg"
+        "photos":"assets/images/doctor_4.jpg"
     }
 ]
