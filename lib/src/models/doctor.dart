@@ -37,25 +37,4 @@ class Doctor {
     this._name = map['name'];
     this._specialist = map['specialist'];
   }
-
-  List<Doctor> getDummyData() {
-    List<Doctor> doctorList;
-    String spes = "Umum";
-
-    for (var i = 0; i < 10; i++) {
-      if (i % 2 == 0) {
-        spes = "Ahli syaraf";
-      } else if (i % 3 == 0) {
-        spes = "Ahli mata";
-      } else if (i % 4 == 0) {
-        spes = "Ahli telinga";
-      } else {
-        spes = "Ahli gigi";
-      }
-
-      doctorList.add(Doctor.withId((i + 1), "Doktor $i", spes));
-    }
-
-    return doctorList;
-  }
 }

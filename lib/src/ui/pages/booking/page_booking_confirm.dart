@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:random_string/random_string.dart';
 import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/models/doctor.dart';
+import 'package:smkdev/src/models/home_doctor.dart';
 import 'package:smkdev/src/models/user.dart';
 import 'package:smkdev/src/ui/pages/booking/page_change_patient.dart';
 import 'package:smkdev/src/ui/pages/booking/page_finish_booking.dart';
@@ -15,7 +16,7 @@ class BookingConfirm extends StatefulWidget {
   @override
   _BookingConfirmState createState() => _BookingConfirmState();
 
-  final Doctor doctor;
+  final HomeDoctor doctor;
 }
 
 class _BookingConfirmState extends State<BookingConfirm> {

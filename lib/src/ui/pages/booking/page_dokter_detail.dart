@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/models/doctor.dart';
+import 'package:smkdev/src/models/home_doctor.dart';
 import 'package:smkdev/src/models/user.dart';
 import 'package:smkdev/src/ui/widgets/booking/widget_bottom_nav.dart';
 import 'package:smkdev/src/ui/widgets/booking/widget_doctor_schedule_item.dart';
@@ -13,7 +14,7 @@ class BookingDoctorDetail extends StatefulWidget {
   @override
   _BookingDoctorDetailState createState() => _BookingDoctorDetailState();
   const BookingDoctorDetail({Key key, this.doctor}) : super(key: key);
-  final Doctor doctor;
+  final HomeDoctor doctor;
 }
 
 class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
@@ -72,9 +73,9 @@ class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/doctor.png'),
-                  backgroundColor: Colors.white,
-                  radius: 70),
+                    backgroundImage: AssetImage('assets/images/doctor.png'),
+                    backgroundColor: Colors.white,
+                    radius: 70),
                 SizedBox(height: 10),
                 Text(
                   widget.doctor.name,

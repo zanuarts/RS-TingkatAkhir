@@ -84,7 +84,7 @@ class _HomeAboutState extends State<HomeAbout> {
               height: 200,
               child: FutureBuilder(
                 future: DefaultAssetBundle.of(context)
-                    .loadString('assets/json/home_doctor.json'),
+                    .loadString('assets/json/doctor.json'),
                 builder: (context, snapshot) {
                   // Decode the JSON
                   List<HomeDoctor> homeDoctor = parseJson(snapshot.data.toString());

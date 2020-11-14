@@ -1,6 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:smkdev/src/models/doctor.dart';
+import 'package:smkdev/src/models/home_doctor.dart';
 import 'package:smkdev/src/ui/pages/booking/page_dokter_detail.dart';
 import 'package:smkdev/src/ui/widgets/booking/widget_booking_item.dart';
 import 'package:smkdev/src/ui/widgets/widget_header.dart';
@@ -14,9 +18,20 @@ class BookingDashboard extends StatefulWidget {
 }
 
 class _BookingDashboardState extends State<BookingDashboard> {
+  List<HomeDoctor> doctorData = [];
+
   @override
   void initState() {
     super.initState();
+    this.getJsonFile();
+  }
+
+  void getJsonFile() async {
+    var jsonData = await rootBundle.loadString("assets/json/doctor.json");
+    var decodedJson = json.decode(jsonData);
+    for (int i = 0; i < decodedJson.length; i++) {
+      doctorData.add(HomeDoctor.fromJson(decodedJson[i]));
+    }
   }
 
   @override
@@ -30,21 +45,21 @@ class _BookingDashboardState extends State<BookingDashboard> {
             size: size,
             title: "Booking",
           ),
-          widget.doctorList.length == 0
+          this.doctorData.length == 0
               ? CircularProgressIndicator()
               : Expanded(
                   child: ListView.builder(
-                  itemCount: widget.doctorList.length,
+                  itemCount: this.doctorData.length,
                   itemBuilder: (BuildContext context, int index) {
                     return BookingItem(
-                      doctor: widget.doctorList[index],
+                      doctor: this.doctorData[index],
                       clickBack: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (BuildContext context) =>
                                     BookingDoctorDetail(
-                                      doctor: widget.doctorList[index],
+                                      doctor: this.doctorData[index],
                                     )));
                       },
                     );
