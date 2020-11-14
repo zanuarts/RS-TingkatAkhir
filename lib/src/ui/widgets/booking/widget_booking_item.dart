@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:smkdev/src/models/doctor.dart';
+import 'package:smkdev/src/models/home_doctor.dart';
 
 class BookingItem extends StatelessWidget {
   const BookingItem({
@@ -10,7 +10,7 @@ class BookingItem extends StatelessWidget {
   }) : super(key: key);
 
   final Function clickBack;
-  final Doctor doctor;
+  final HomeDoctor doctor;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class BookingItem extends StatelessWidget {
         child: Row(
           children: [
             CircleAvatar(
-              backgroundImage: AssetImage('assets/images/doctor.png'),
+              backgroundImage: AssetImage(doctor.photos),
               backgroundColor: Colors.white,
               radius: 30,
             ),

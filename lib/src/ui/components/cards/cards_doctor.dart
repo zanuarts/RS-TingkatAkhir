@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:smkdev/src/models/doctor.dart';
 import 'package:smkdev/src/models/home_doctor.dart';
 
 class DoctorCards extends StatefulWidget {
@@ -28,46 +27,42 @@ class _DoctorCardsState extends State<DoctorCards> {
                   offset: Offset(1, 1))
             ]),
         child: InkWell(
-          splashColor: Colors.blue.withAlpha(30),
-          onTap: () {
-            print('Card tapped.');
-          },
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            splashColor: Colors.blue.withAlpha(30),
+            onTap: () {
+              print('Card tapped.');
+            },
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    height: 115,
-                    width: 140,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(10),
-                          topRight: Radius.circular(10)),
-                      image: DecorationImage(
-                          image: AssetImage(widget.homeDoctor.photos),
-                          fit: BoxFit.cover),
-                    ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 115,
+                        width: 140,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(10),
+                              topRight: Radius.circular(10)),
+                          image: DecorationImage(
+                              image: AssetImage(widget.homeDoctor.photos),
+                              fit: BoxFit.cover),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.fromLTRB(10, 15, 10, 0),
+                        child: Text(
+                          widget.homeDoctor.name,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.fromLTRB(10, 5, 10, 0),
+                        child: Text(widget.homeDoctor.specialist),
+                      ),
+                    ],
                   ),
-              Container(
-                margin: EdgeInsets.fromLTRB(10,15,10,0),
-                child: Text(
-                  widget.homeDoctor.name,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold
-                  ),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.fromLTRB(10,5,10,0),
-                child: Text(
-                  widget.homeDoctor.specialist
-                ),
-              ),
-            ],
-          ),
-            ])));
-
+                ])));
   }
 }

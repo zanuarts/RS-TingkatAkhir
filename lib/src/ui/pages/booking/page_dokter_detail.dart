@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:smkdev/src/constants/constant.dart';
-import 'package:smkdev/src/models/doctor.dart';
+import 'package:smkdev/src/models/home_doctor.dart';
 import 'package:smkdev/src/models/user.dart';
 import 'package:smkdev/src/ui/widgets/booking/widget_bottom_nav.dart';
 import 'package:smkdev/src/ui/widgets/booking/widget_doctor_schedule_item.dart';
@@ -13,27 +16,20 @@ class BookingDoctorDetail extends StatefulWidget {
   @override
   _BookingDoctorDetailState createState() => _BookingDoctorDetailState();
   const BookingDoctorDetail({Key key, this.doctor}) : super(key: key);
-  final Doctor doctor;
+  final HomeDoctor doctor;
 }
 
 class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
   List<User> userList = List<User>();
-  void getDummyUser() {
-    String kelamin = "Perempuan";
-    String status = "Kamu";
 
-    for (var i = 0; i < 3; i++) {
-      if (i % 2 == 0) {
-        kelamin = "Laki-laki";
-        status = "Anak";
-      } else if (i % 1 == 0) {
-        status = "Ibu";
+  void getDummyUser() async {
+    var jsonData = await rootBundle.loadString("assets/json/user.json");
+    var decodedJson = json.decode(jsonData);
+    setState(() {
+      for (int i = 0; i < decodedJson.length; i++) {
+        userList.add(User.fromJson(decodedJson[i]));
       }
-
-      // ignore: unnecessary_brace_in_string_interps
-      userList.add(User.withId(i, "Name $i", "email${i}@gmail.com", kelamin,
-          status, "08212345678$i"));
-    }
+    });
   }
 
   @override
@@ -72,9 +68,9 @@ class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/doctor.png'),
-                  backgroundColor: Colors.white,
-                  radius: 70),
+                    backgroundImage: AssetImage(widget.doctor.photos),
+                    backgroundColor: Colors.white,
+                    radius: 70),
                 SizedBox(height: 10),
                 Text(
                   widget.doctor.name,
@@ -192,6 +188,7 @@ class _BookingDoctorDetailState extends State<BookingDoctorDetail> {
                   MaterialPageRoute(
                       builder: (BuildContext context) => BookingConfirm(
                             doctor: widget.doctor,
+                            user: this.userList[0],
                           )));
         },
         buttonText: "Buat Janji",
