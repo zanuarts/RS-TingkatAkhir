@@ -8,7 +8,6 @@ import 'package:smkdev/src/models/career.dart';
 import 'package:smkdev/src/models/partner.dart';
 import 'package:smkdev/src/ui/components/cards/cards_career.dart';
 import 'package:smkdev/src/ui/components/cards/cards_partner.dart';
-import 'package:smkdev/src/ui/widgets/widget_header.dart';
 
 class PartnerDashboard extends StatefulWidget {
   @override
@@ -61,7 +60,6 @@ class _PartnerDashboardState extends State<PartnerDashboard> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text(

@@ -6,9 +6,6 @@ import 'package:smkdev/src/models/layanan.dart';
 import 'package:smkdev/src/ui/components/cards/cards_event.dart';
 import 'package:smkdev/src/ui/components/cards/cards_layanan.dart';
 import 'package:smkdev/src/ui/widgets/widget_header.dart';
-import 'package:smkdev/src/ui/widgets/widget_header.dart';
-
-import '../../components/cards/cards_about.dart';
 
 class LayananDashboard extends StatefulWidget {
   @override
