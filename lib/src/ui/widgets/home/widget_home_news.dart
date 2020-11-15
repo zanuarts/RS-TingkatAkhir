@@ -50,15 +50,14 @@ class _HomeNewsState extends State<HomeNews> {
       child: Container(
         height: 260,
         child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (BuildContext context, int id) {
-                    return NewsCards(
-                      news: newsList[id],
-                    );
-                  },
-                  itemCount: newsList == null ? 0 : newsList.length,
-                )
-                
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (BuildContext context, int id) {
+            return NewsCards(
+              news: newsList[id],
+            );
+          },
+          itemCount: newsList == null ? 0 : newsList.length,
+        )        
       ),
     );
   }

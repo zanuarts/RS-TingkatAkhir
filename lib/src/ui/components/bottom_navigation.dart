@@ -44,24 +44,24 @@ class _MainBottomNavState extends State<MainBottomNav> {
         await showMenu(
           context: context,
           position: RelativeRect.fromLTRB(MediaQuery.of(context).size.width,
-              MediaQuery.of(context).size.height * 0.7, 0.0, 0.0),
+            MediaQuery.of(context).size.height * 0.7, 0.0, 0.0),
           elevation: 0,
           color: Colors.transparent,
           items: [
             PopupMenuItem(
-                value: null,
-                child: Container(
-                  margin: EdgeInsets.all(2),
-                  width: 160,
-                  child: RaisedButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadiusDirectional.circular(20)),
+              value: null,
+              child: Container(
+                margin: EdgeInsets.all(2),
+                width: 160,
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusDirectional.circular(20)),
                     onPressed: () {
                       print("tentang kami pressed");
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => AboutDashboard()),
+                          builder: (context) => AboutDashboard()),
                       );
                     },
                     color: colorPrimary,
@@ -76,23 +76,24 @@ class _MainBottomNavState extends State<MainBottomNav> {
                           Icons.group_outlined,
                           color: Colors.white,
                         )
-                      ],
-                    ),
+                    ],
                   ),
-                )),
+                ),
+              )
+            ),
             PopupMenuItem(
               child: Container(
                 margin: EdgeInsets.all(2),
                 width: 180,
                 child: RaisedButton(
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusDirectional.circular(20)),
+                    borderRadius: BorderRadiusDirectional.circular(20)),
                   onPressed: () {
                     print("partner & career pressed");
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => PartnerDashboard()),
+                        builder: (context) => PartnerDashboard()),
                     );
                   },
                   color: colorPrimary,
@@ -118,13 +119,13 @@ class _MainBottomNavState extends State<MainBottomNav> {
                 width: 130,
                 child: RaisedButton(
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusDirectional.circular(20)),
+                    borderRadius: BorderRadiusDirectional.circular(20)),
                   onPressed: () {
                     print("feedback pressed");
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => FeedbackDashboard()),
+                        builder: (context) => FeedbackDashboard()),
                     );
                   },
                   color: colorPrimary,
