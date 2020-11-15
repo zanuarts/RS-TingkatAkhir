@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/models/event.dart';
 import 'package:smkdev/src/models/news.dart';
+import 'package:smkdev/src/ui/widgets/home/widget_home_news.dart';
 
 class ArticleDetailPage extends StatefulWidget {
   final Event event;
@@ -61,7 +63,7 @@ class _ArticleDetailPageState extends State<ArticleDetailPage> {
                         children: [
                           Chip(
                             padding: EdgeInsets.all(0),
-                            backgroundColor: Colors.deepPurple,
+                            backgroundColor: colorPrimary,
                             label: Text('BERITA',
                                 style: TextStyle(color: Colors.white)),
                           ),
@@ -75,6 +77,19 @@ class _ArticleDetailPageState extends State<ArticleDetailPage> {
                           Container(
                             margin: EdgeInsets.only(top: 20),
                             child: Text(widget.news.content),
+                          ),
+                          SizedBox(height: 50),
+                          Column(
+                            children: [
+                              Text(
+                                "- BERITA LAIN -",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                    color: colorPrimary),
+                              ),
+                              HomeNews(),
+                            ],
                           )
                         ],
                       )),
