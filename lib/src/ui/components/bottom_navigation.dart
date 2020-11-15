@@ -57,15 +57,12 @@ class _MainBottomNavState extends State<MainBottomNav> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadiusDirectional.circular(20)),
                     onPressed: () {
-                      setState(() {
-                        _selectedIndex = index;
-                      });
-                      // print("tentang kami pressed");
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => AboutDashboard()),
-                      // );
+                      print("tentang kami pressed");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AboutDashboard()),
+                      );
                     },
                     color: colorPrimary,
                     child: Row(
@@ -93,9 +90,6 @@ class _MainBottomNavState extends State<MainBottomNav> {
                     borderRadius: BorderRadiusDirectional.circular(20)),
                   onPressed: () {
                     print("partner & career pressed");
-                    // setState(() {
-                    //     _selectedIndex = index;
-                    //   });
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -127,10 +121,6 @@ class _MainBottomNavState extends State<MainBottomNav> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadiusDirectional.circular(20)),
                   onPressed: () {
-                    // print("feedback pressed");
-                    // setState(() {
-                    //     _selectedIndex = index;
-                    //   });
                     Navigator.push(
                       context,
                       MaterialPageRoute(
