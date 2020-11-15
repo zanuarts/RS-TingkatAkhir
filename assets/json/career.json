@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "nama": "Dokter Sunat",
+        "short_desc": "Karir yang bagus!",
+        "deskripsi": "Abcjdjdksjkdjkdjksjdksjdk",
+        "tanggal": "2020-02-11 07:00:00",
+        "image": "assets/images/hospital_01.jpg"
+    },
+    {
+        "id": 1,
+        "nama": "Dokter Bedah",
+        "short_desc": "Karir yang bagus!",
+        "deskripsi": "Abcjdjdksjkdjkdjksjdksjdk",
+        "tanggal": "2020-02-11 07:00:00",
+        "image": "assets/images/hospital_01.jpg"
+    }
+]
