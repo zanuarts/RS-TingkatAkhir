@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:smkdev/src/models/news.dart';
 import 'package:smkdev/src/models/partner.dart';
 
 class PartnerCards extends StatefulWidget {

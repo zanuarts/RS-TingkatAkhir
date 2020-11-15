@@ -27,7 +27,6 @@ class _HomeAboutState extends State<HomeAbout> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     this.getDummyDoctor();
   }

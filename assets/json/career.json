@@ -1,0 +1,27 @@
+[
+    {
+        "id":"1",
+        "posisi":"Bidan",
+        "image":"assets/images/bidan.jpg"
+    },
+    {
+        "id":"2",
+        "posisi":"Perawat",
+        "image":"assets/images/perawat.jpg"
+    },
+    {
+        "id":"3",
+        "posisi":"Apoteker",
+        "image":"assets/images/apoteker.jpg"
+    },
+    {
+        "id":"4",
+        "posisi":"IT Support",
+        "image":"assets/images/it_supp.jpg"
+    },
+    {
+        "id":"5",
+        "posisi":"Back End Developer",
+        "image":"assets/images/back_end.jpg"
+    }
+]

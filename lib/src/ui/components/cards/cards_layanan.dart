@@ -40,10 +40,6 @@ class LayananButtonItem extends StatelessWidget {
       this.onClick,
       @required this.layanan});
 
-  Function _processOnTap(Function onClick) {
-    return onClick ?? () {};
-  }
-
   @override
   Widget build(BuildContext context) {
     return Card(
