@@ -27,6 +27,7 @@ dependencies:
   cupertino_radio_choice: ^1.0.0+2
   google_maps_flutter: ^1.0.6
   badges: ^1.1.4
+  palette_generator: ^0.2.3
   intl:
   flutter_datetime_picker:
   random_string:
