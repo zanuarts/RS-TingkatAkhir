@@ -26,7 +26,7 @@ class _HomeNewsState extends State<HomeNews> {
 
   List<News> newsList = List<News>();
 
-  void getDummyDoctor() async {
+  void getDummyNews() async {
     var jsonData = await rootBundle.loadString("assets/json/news.json");
     var decodedJson = json.decode(jsonData);
     setState(() {
@@ -38,9 +38,8 @@ class _HomeNewsState extends State<HomeNews> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    this.getDummyDoctor();
+    this.getDummyNews();
   }
 
   @override
