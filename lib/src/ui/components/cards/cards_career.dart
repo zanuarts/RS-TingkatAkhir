@@ -80,7 +80,7 @@ class CareerButtonItem extends StatelessWidget {
                     fit: BoxFit.cover,
                     colorFilter: ColorFilter.mode(
                         Colors.black.withOpacity(0.7), BlendMode.dstATop),
-                    image: ResizeImage(image, width: 300, height: 100)),
+                    image: ResizeImage(image, width: 300, height: 200)),
               ),
             ),
             onTap: () {

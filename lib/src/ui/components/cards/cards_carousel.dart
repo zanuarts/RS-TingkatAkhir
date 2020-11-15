@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/constants/constant.dart';
+import 'package:smkdev/src/ui/pages/about/page_about_app.dart';
 
 class CarouselCards extends StatelessWidget {
   @override
@@ -72,6 +73,11 @@ class CarouselCards extends StatelessWidget {
             ),
             onPressed: (){
               print("floating pressed!");
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AboutDashboard()),
+                  );
             }
           ),
         ),                

@@ -74,12 +74,14 @@ class LayananButtonItem extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => LayananDetailPage(
-                          layanan: layanan,
-                        )),
-              );
-            },
-          ),
-        ));
+                  builder: (context) => LayananDetailPage(
+                    layanan: layanan,
+                )
+              ),
+            );
+          },
+        ),
+      )
+    );
   }
 }

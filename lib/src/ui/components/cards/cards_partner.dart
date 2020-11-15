@@ -32,23 +32,20 @@ class _PartnerCardsState extends State<PartnerCards> {
           print('Card tapped.');
         },
         child: Container(
-                  height: 120,
-                  width:140,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    topRight: Radius.circular(10)
-                  ),
-                  image: DecorationImage(
-                    image: AssetImage(widget.partner.logo),
-                    fit: BoxFit.fitWidth
-                  ),
-                ),
-              ),
-            
-        
-      
+          height: 120,
+          width:140,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(10),
+            topRight: Radius.circular(10)
+          ),
+          image: DecorationImage(
+            image: AssetImage(widget.partner.logo),
+            fit: BoxFit.fitWidth
+          ),
+        ),
+      ),
     )
   );
-}
+  }
 }
