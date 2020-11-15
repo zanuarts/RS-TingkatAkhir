@@ -39,10 +39,6 @@ class EventButtonItem extends StatelessWidget {
     this.onClick,
     @required this.event});
 
-  Function _processOnTap(Function onClick) {
-    return onClick ?? () {};
-  }
-
   @override
   Widget build(BuildContext context) {
     return Card(

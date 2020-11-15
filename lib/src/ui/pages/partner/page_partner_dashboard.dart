@@ -4,9 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:smkdev/src/constants/constant.dart';
+import 'package:smkdev/src/models/career.dart';
 import 'package:smkdev/src/models/partner.dart';
+import 'package:smkdev/src/ui/components/cards/cards_career.dart';
 import 'package:smkdev/src/ui/components/cards/cards_partner.dart';
-import 'package:smkdev/src/ui/widgets/widget_header.dart';
 
 class PartnerDashboard extends StatefulWidget {
   @override
@@ -14,20 +15,8 @@ class PartnerDashboard extends StatefulWidget {
 }
 
 class _PartnerDashboardState extends State<PartnerDashboard> {
-  List<Partner> parseJson(String response) {
-    if (response == null) {
-      return [];
-    }
-    final parsed = json.decode(response.toString());
-
-    return parsed != null
-        ? parsed
-            .map<Partner>((json) => new Partner.fromJson(json))
-            .toList()
-        : null;
-  }
-
   List<Partner> partnerList = List<Partner>();
+  List<Career> careerList = List<Career>();
 
   void getDummyPartner() async {
     var jsonData = await rootBundle.loadString("assets/json/partner.json");
@@ -38,16 +27,25 @@ class _PartnerDashboardState extends State<PartnerDashboard> {
       }
     });
   }
+  void getDummyCareer() async {
+    var jsonData = await rootBundle.loadString("assets/json/career.json");
+    var decodedJson = json.decode(jsonData);
+    setState(() {
+      for (int i = 0; i < decodedJson.length; i++) {
+        careerList.add(Career.fromJson(decodedJson[i]));
+      }
+    });
+  }
 
   @override
   void initState() {
     super.initState();
     this.getDummyPartner();
+    this.getDummyCareer();
   }
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -119,16 +117,16 @@ class _PartnerDashboardState extends State<PartnerDashboard> {
           ),
           SizedBox(height:10),
           Container(
-          height: 120,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (BuildContext context, int id) {
-              return PartnerCards(
-                partner: partnerList[id],
-              );
-            },
-            itemCount: partnerList == null ? 0 : partnerList.length,
-          ),
+            height: 120,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (BuildContext context, int id) {
+                return PartnerCards(
+                  partner: partnerList[id],
+                );
+              },
+              itemCount: partnerList == null ? 0 : partnerList.length,
+            ),
           ),    
           SizedBox(height:10),
           Text(
@@ -138,6 +136,17 @@ class _PartnerDashboardState extends State<PartnerDashboard> {
               fontSize: 20
             ),
           ),
+          Container(
+            height: 700,
+            child: ListView.builder(
+              itemBuilder: (BuildContext context, int id) {
+                return CareerCards(
+                  career: careerList[id],
+                );
+              },
+              itemCount: careerList == null ? 0 : careerList.length,
+            ),
+          ), 
         ],
       ),
     );
