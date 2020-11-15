@@ -26,17 +26,31 @@ class CarouselCards extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 30,
-                    fontWeight: FontWeight.bold
+                    fontWeight: FontWeight.bold,
+                    shadows: [
+                      Shadow(
+                        blurRadius: 15.0,
+                        color: Colors.black,
+                        offset: Offset(2.0, 2.0),
+                        ),
+                      ],
                   ),
                 )
               ),
               Container(
                 margin: EdgeInsets.all(10),
                 child: Text(
-                  "RS Tingkat Akhir merupakan komunitas developer siswa SMK jurusan Rekayasa Perangkat Lunak (RPL), Teknik Komputer dan Jaringan (TKJ) dan Multimedia (MM) dari seluruh Indonesia.",
+                  "RS Tingkat Akhir merupakan rumah sakit yang rumah sakit terbaik di Jawa Barat yang didukung oleh tenaga kerja terbaik se-Indonesia.",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 14,
+                    shadows: [
+                      Shadow(
+                        blurRadius: 15.0,
+                        color: Colors.black,
+                        offset: Offset(2.0, 2.0),
+                        ),
+                      ],
                   ),
                 )
               ),                

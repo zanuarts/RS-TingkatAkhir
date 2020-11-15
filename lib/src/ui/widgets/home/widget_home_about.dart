@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:smkdev/src/constants/constant.dart';
@@ -14,19 +13,6 @@ class HomeAbout extends StatefulWidget {
 }
 
 class _HomeAboutState extends State<HomeAbout> {
-  List<HomeDoctor> parseJson(String response) {
-    if (response == null) {
-      return [];
-    }
-    final parsed = json.decode(response.toString());
-
-    return parsed != null
-        ? parsed
-            .map<HomeDoctor>((json) => new HomeDoctor.fromJson(json))
-            .toList()
-        : null;
-  }
-
   List<HomeDoctor> doctorList = List<HomeDoctor>();
 
   void getDummyDoctor() async {

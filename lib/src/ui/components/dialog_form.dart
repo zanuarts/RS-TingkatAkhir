@@ -33,8 +33,8 @@ void showFormBooking(
               decoration: BoxDecoration(
                   color: Colors.grey[50],
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20))),
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20))),
               child: Stack(
                 children: [
                   Positioned(
@@ -44,8 +44,8 @@ void showFormBooking(
                       height: 10,
                       margin: EdgeInsets.only(bottom: 20),
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: colorPrimary),
+                        borderRadius: BorderRadius.circular(5),
+                        color: colorPrimary),
                     ),
                   ),
                   ListView(
@@ -60,17 +60,19 @@ void showFormBooking(
                               ? Text(
                                   "Maaf, anda belum terdaftar dalam aplikasi. Harap daftar terlebih dahulu untuk dapat memesan jadwal dengan dokter yang bersangkutan.",
                                   style: TextStyle(
-                                      color: Colors.red[300],
-                                      fontSize: 16,
-                                      fontStyle: FontStyle.italic,
-                                      fontWeight: FontWeight.w500),
+                                    color: Colors.red[300],
+                                    fontSize: 16,
+                                    fontStyle: FontStyle.italic,
+                                    fontWeight: FontWeight.w500
+                                  ),
                                 )
                               : Text(
                                   "Tambah pasien baru",
                                   style: TextStyle(
-                                      color: colorPrimary,
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold),
+                                    color: colorPrimary,
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold
+                                  ),
                                 ),
                           SizedBox(height: 40),
                           Form(
@@ -82,19 +84,18 @@ void showFormBooking(
                                   Text(
                                     "Nama",
                                     style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
+                                      color: Colors.grey,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold
+                                    ),
                                   ),
                                   Container(
                                     padding: EdgeInsets.symmetric(
-                                        horizontal: 5, vertical: 2),
+                                      horizontal: 5, vertical: 2),
                                     decoration: BoxDecoration(
-                                        color: Colors.grey[50],
-                                        border:
-                                            Border.all(color: Colors.grey[300]),
-                                        borderRadius:
-                                            BorderRadius.circular(15)),
+                                      color: Colors.grey[50],
+                                      border: Border.all(color: Colors.grey[300]),
+                                      borderRadius: BorderRadius.circular(15)),
                                     child: TextFormField(
                                       controller: textNama,
                                       keyboardType: TextInputType.text,
@@ -109,14 +110,16 @@ void showFormBooking(
                                         _nama = val;
                                       },
                                       decoration: InputDecoration(
-                                          contentPadding: EdgeInsets.only(
-                                              left: 20, right: 20),
-                                          hintText: "Nama",
-                                          hintStyle: TextStyle(
-                                            color: Colors.grey[400],
-                                          ),
-                                          enabledBorder: InputBorder.none,
-                                          focusedBorder: InputBorder.none),
+                                        contentPadding: EdgeInsets.only(
+                                          left: 20, right: 20
+                                        ),
+                                        hintText: "Nama",
+                                        hintStyle: TextStyle(
+                                          color: Colors.grey[400],
+                                        ),
+                                        enabledBorder: InputBorder.none,
+                                        focusedBorder: InputBorder.none
+                                      ),
                                     ),
                                   ),
                                   SizedBox(height: 20),
@@ -150,82 +153,90 @@ void showFormBooking(
                                         _nohp = val;
                                       },
                                       decoration: InputDecoration(
-                                          contentPadding: EdgeInsets.only(
-                                              left: 20, right: 20),
-                                          hintText: "No Handphone",
-                                          hintStyle: TextStyle(
-                                            color: Colors.grey[400],
-                                          ),
-                                          enabledBorder: InputBorder.none,
-                                          focusedBorder: InputBorder.none),
+                                        contentPadding: EdgeInsets.only(
+                                          left: 20, right: 20
+                                        ),
+                                        hintText: "No Handphone",
+                                        hintStyle: TextStyle(
+                                          color: Colors.grey[400],
+                                        ),
+                                        enabledBorder: InputBorder.none,
+                                        focusedBorder: InputBorder.none
+                                      ),
                                     ),
                                   ),
                                   SizedBox(height: 20),
                                   Text(
                                     "Jenis Kelamin",
                                     style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
+                                      color: Colors.grey,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold
+                                    ),
                                   ),
                                   Row(
                                     children: [
                                       Expanded(
                                         child: RadioListTile(
-                                            value: "laki",
-                                            selected: _kelamin == 'laki',
-                                            activeColor: colorPrimary,
-                                            groupValue: _kelamin,
-                                            title: Text(
-                                              "Laki-laki",
-                                              style: TextStyle(
-                                                  color: Colors.grey,
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.w500),
+                                          value: "laki",
+                                          selected: _kelamin == 'laki',
+                                          activeColor: colorPrimary,
+                                          groupValue: _kelamin,
+                                          title: Text(
+                                            "Laki-laki",
+                                            style: TextStyle(
+                                              color: Colors.grey,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500
                                             ),
-                                            onChanged: (val) {
-                                              print(val);
-                                              _kelamin = val;
-                                            }),
+                                          ),
+                                          onChanged: (val) {
+                                            print(val);
+                                            _kelamin = val;
+                                          }
+                                        ),
                                       ),
                                       Expanded(
                                         child: RadioListTile(
-                                            value: "perempuan",
-                                            selected: _kelamin == 'perempuan',
-                                            activeColor: colorPrimary,
-                                            groupValue: _kelamin,
-                                            title: Text(
-                                              "Perempuan",
-                                              style: TextStyle(
-                                                  color: Colors.grey,
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.w500),
+                                          value: "perempuan",
+                                          selected: _kelamin == 'perempuan',
+                                          activeColor: colorPrimary,
+                                          groupValue: _kelamin,
+                                          title: Text(
+                                            "Perempuan",
+                                            style: TextStyle(
+                                              color: Colors.grey,
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w500
+                                              ),
                                             ),
                                             onChanged: (val) {
                                               print(val);
                                               _kelamin = val;
-                                            }),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(height: 20),
-                                  Text(
-                                    "Email",
-                                    style: TextStyle(
+                                            }
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(height: 20),
+                                    Text(
+                                      "Email",
+                                      style: TextStyle(
                                         color: Colors.grey,
                                         fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  Container(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 5, vertical: 2),
-                                    decoration: BoxDecoration(
+                                        fontWeight: FontWeight.bold
+                                      ),
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 5, vertical: 2
+                                      ),
+                                      decoration: BoxDecoration(
                                         color: Colors.grey[50],
-                                        border:
-                                            Border.all(color: Colors.grey[300]),
-                                        borderRadius:
-                                            BorderRadius.circular(15)),
-                                    child: TextFormField(
+                                        border: Border.all(color: Colors.grey[300]),
+                                        borderRadius: BorderRadius.circular(15)
+                                      ),
+                                      child: TextFormField(
                                       controller: textEmail,
                                       keyboardType: TextInputType.text,
                                       validator: (value) {
@@ -239,20 +250,19 @@ void showFormBooking(
                                         _email = val;
                                       },
                                       decoration: InputDecoration(
-                                          contentPadding: EdgeInsets.only(
-                                              left: 20, right: 20),
-                                          hintText: "email",
-                                          hintStyle: TextStyle(
-                                            color: Colors.grey[400],
-                                          ),
-                                          enabledBorder: InputBorder.none,
-                                          focusedBorder: InputBorder.none),
+                                        contentPadding: EdgeInsets.only(left: 20, right: 20),
+                                        hintText: "email",
+                                        hintStyle: TextStyle(
+                                          color: Colors.grey[400],
+                                        ),
+                                        enabledBorder: InputBorder.none,
+                                        focusedBorder: InputBorder.none
+                                      ),
                                     ),
                                   ),
                                   SizedBox(height: 20),
                                   Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       ButtonPrimary(
                                         buttonText: "Batal",
@@ -270,8 +280,9 @@ void showFormBooking(
                                       ),
                                     ],
                                   )
-                                ],
-                              ))
+                              ],
+                            )
+                          )
                         ],
                       ),
                     ],
