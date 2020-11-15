@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/models/home_doctor.dart';
 import 'package:smkdev/src/ui/components/cards/cards_doctor.dart';
@@ -12,14 +13,25 @@ class HomeAbout extends StatefulWidget {
 }
 
 class _HomeAboutState extends State<HomeAbout> {
-  List<HomeDoctor> parseJson(String response) {
-    if (response == null) {
-      return [];
-    }
-    final parsed = json.decode(response.toString());
+  List<HomeDoctor> doctorList = List<HomeDoctor>();
 
-    return parsed != null ? parsed.map<HomeDoctor>((json) => new HomeDoctor.fromJson(json)).toList() : null;
+  void getDummyDoctor() async {
+    var jsonData = await rootBundle.loadString("assets/json/doctor.json");
+    var decodedJson = json.decode(jsonData);
+    setState(() {
+      for (int i = 0; i < decodedJson.length; i++) {
+        doctorList.add(HomeDoctor.fromJson(decodedJson[i]));
+      }
+    });
   }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    this.getDummyDoctor();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,30 +58,28 @@ class _HomeAboutState extends State<HomeAbout> {
               Padding(
                 padding: EdgeInsets.only(right: 20, top: 20),
                 child: Material(
-                  color: Colors.transparent,
-                  child: InkWell(
-                    child: Container(
-                      padding: EdgeInsets.all(5),
-                      child: Text(
-                        "Selengkapnya",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
+                    color: Colors.transparent,
+                    child: InkWell(
+                      child: Container(
+                        padding: EdgeInsets.all(5),
+                        child: Text(
+                          "Selengkapnya",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                          ),
                         ),
                       ),
-                    ),
-                    onTap: () {
-                      print("More clicked!");
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => AboutDashboard()
-                        ),
-                      );
-                     },
-                   )
-                ),
+                      onTap: () {
+                        print("More clicked!");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AboutDashboard()),
+                        );
+                      },
+                    )),
               )
             ],
           ),
@@ -80,22 +90,16 @@ class _HomeAboutState extends State<HomeAbout> {
           Padding(
             padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
             child: Container(
-              height: 200,
-              child: FutureBuilder(
-                future: DefaultAssetBundle.of(context).loadString('assets/json/home_doctor.json'),
-                builder: (context, snapshot) {
-                  // Decode the JSON
-                  List<HomeDoctor> homeDoctor = parseJson(snapshot.data.toString());
-                  return ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (BuildContext context, int id){
-                      return DoctorCards();
-                    },
-                    itemCount: homeDoctor == null ? 0 : homeDoctor.length,
-                  );
-                }
-              )
-            ),
+                height: 200,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (BuildContext context, int id) {
+                    return DoctorCards(
+                      homeDoctor: doctorList[id],
+                    );
+                  },
+                  itemCount: doctorList == null ? 0 : doctorList.length,
+                )),
           )
         ],
       ),
