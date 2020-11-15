@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smkdev/src/models/home_doctor.dart';
+import 'package:smkdev/src/ui/pages/booking/page_dokter_detail.dart';
 
 class DoctorCards extends StatefulWidget {
   final HomeDoctor homeDoctor;
@@ -29,7 +30,12 @@ class _DoctorCardsState extends State<DoctorCards> {
         child: InkWell(
             splashColor: Colors.blue.withAlpha(30),
             onTap: () {
-              print('Card tapped.');
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => BookingDoctorDetail(
+                            doctor: widget.homeDoctor,
+                          )));
             },
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

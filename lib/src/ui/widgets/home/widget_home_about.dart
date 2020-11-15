@@ -113,20 +113,7 @@ class _HomeAboutState extends State<HomeAbout> {
                     );
                   },
                   itemCount: doctorList == null ? 0 : doctorList.length,
-                )
-
-                // child: ListView(
-                //   // This next line does the trick.
-                //   scrollDirection: Axis.horizontal,
-                //   children: <Widget>[
-                //     DoctorCards(),
-                //     DoctorCards(),
-                //     DoctorCards(),
-                //     DoctorCards(),
-                //     DoctorCards(),
-                //   ],
-                // ),
-                ),
+                )),
           )
         ],
       ),
