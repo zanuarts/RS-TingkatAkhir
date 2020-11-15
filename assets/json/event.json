@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "nama": "Daftar Sekarang!",
+        "short_desc": "Bergabunglah bersama kami!",
+        "deskripsi": "bab",
+        "tanggal": "2020-11-15T18:14:50.382990",
+        "image": "assets/images/medicine_01.jpg"
+    },
+    {
+        "id": 2,
+        "nama": "EPeresmian Sistem Informasi RS",
+        "short_desc": "Informasinya ada di sini.",
+        "deskripsi": "bab",
+        "tanggal": "2020-11-15T18:14:50.383",
+        "image": "assets/images/medicine_01.jpg"
+    },
+    {
+        "id": 3,
+        "nama": "Penyuluhan Online COVID-19",
+        "short_desc": "Penyuluhan yang bermanfaat!",
+        "deskripsi": "bab",
+        "tanggal": "2020-11-15T18:14:50.383004",
+        "image": "assets/images/medicine_01.jpg"
+    }
+]
