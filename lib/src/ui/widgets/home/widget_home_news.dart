@@ -11,18 +11,6 @@ class HomeNews extends StatefulWidget {
 }
 
 class _HomeNewsState extends State<HomeNews> {
-  List<News> parseJson(String response) {
-    if (response == null) {
-      return [];
-    }
-    final parsed = json.decode(response.toString());
-
-    return parsed != null
-        ? parsed
-            .map<News>((json) => new News.fromJson(json))
-            .toList()
-        : null;
-  }
 
   List<News> newsList = List<News>();
 
