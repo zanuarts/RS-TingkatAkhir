@@ -11,21 +11,20 @@ class LayananButtonsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-    height: 100,
-    child: ListView.builder(
-      shrinkWrap: true,
-      scrollDirection: Axis.horizontal,
-      itemCount: list.length,
-      itemBuilder: (BuildContext context, int index) {
-        return LayananButtonItem(
-          caption: list[index].nama,
-          image: AssetImage(list[index].image),
-          onClick: () {},
-          layanan: list[index],
-        );
-      }
-    ),
-  );
+        height: 100,
+        child: ListView.builder(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            itemCount: list.length,
+            itemBuilder: (BuildContext context, int index) {
+              return LayananButtonItem(
+                caption: list[index].nama,
+                image: AssetImage(list[index].image),
+                onClick: () {},
+                layanan: list[index],
+              );
+            }),
+      );
 }
 
 class LayananButtonItem extends StatelessWidget {

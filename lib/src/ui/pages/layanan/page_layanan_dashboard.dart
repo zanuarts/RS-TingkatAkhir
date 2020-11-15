@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:smkdev/src/constants/constant.dart';
 import 'package:smkdev/src/models/event.dart';
 import 'package:smkdev/src/models/layanan.dart';
@@ -13,50 +16,37 @@ class LayananDashboard extends StatefulWidget {
 }
 
 class _LayananDashboardState extends State<LayananDashboard> {
-  get getLayanan => [
-        Layanan(
-            id: 1,
-            nama: "Ruang Operasi",
-            shortDesc: "abc",
-            deskripsi: "bab",
-            image: "assets/images/ruang_operasi.jpg"),
-        Layanan(
-            id: 1,
-            nama: "Ruang Pemeriksaan",
-            shortDesc: "abc",
-            deskripsi: "bab",
-            image: "assets/images/ruang_periksa.jpg"),
-        Layanan(
-            id: 1,
-            nama: "Ruang Tunggu Pasien",
-            shortDesc: "abc",
-            deskripsi: "bab",
-            image: "assets/images/ruang_tunggu.jpeg"),
-      ];
+  List<Layanan> layananList = List();
+  List<Event> eventList = List();
 
-  get getEvents => [
-        Event(
-            id: 1,
-            nama: "Event 1",
-            shortDesc: "abc",
-            deskripsi: "bab",
-            image: "assets/images/medicine_01.jpg",
-            tanggal: DateTime.now()),
-        Event(
-            id: 1,
-            nama: "Event 1",
-            shortDesc: "abc",
-            deskripsi: "bab",
-            image: "assets/images/medicine_01.jpg",
-            tanggal: DateTime.now()),
-        Event(
-            id: 1,
-            nama: "Event 1",
-            shortDesc: "abc",
-            deskripsi: "bab",
-            image: "assets/images/medicine_01.jpg",
-            tanggal: DateTime.now()),
-      ];
+  void getLayanan() async {
+    var jsonData = await rootBundle.loadString("assets/json/layanan.json");
+    var decodedJson = json.decode(jsonData);
+
+    setState(() {
+      for (var line in decodedJson) {
+        layananList.add(Layanan.fromJson(line));
+      }
+    });
+  }
+
+  void getEvents() async {
+    var jsonData = await rootBundle.loadString("assets/json/event.json");
+    var decodedJson = json.decode(jsonData);
+
+    setState(() {
+      for (var line in decodedJson) {
+        eventList.add(Event.fromJson(line));
+      }
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    this.getLayanan();
+    this.getEvents();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +75,7 @@ class _LayananDashboardState extends State<LayananDashboard> {
             Container(
                 height: 200,
                 margin: EdgeInsets.symmetric(horizontal: 10),
-                child: LayananButtonsWidget(list: this.getLayanan)),
+                child: LayananButtonsWidget(list: layananList)),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
               child: Divider(),
@@ -102,7 +92,7 @@ class _LayananDashboardState extends State<LayananDashboard> {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
-              child: EventButtonsWidget(list: this.getEvents),
+              child: EventButtonsWidget(list: eventList),
             )
           ],
         ),
