@@ -32,25 +32,24 @@ class _HomeMapState extends State<HomeMap> {
         backgroundColor: colorPrimary,
       ),
       body: GoogleMap(
-                mapType: MapType.normal,
-                initialCameraPosition: CameraPosition(
-                  target: _currentPosition,
-                  zoom: 14.0,
-                ),
-                markers: _markers,
-                onTap: (position) {
-                  setState(() {
-                    _markers.add(
-                      Marker(
-                        markerId:
-                            MarkerId("${position.latitude}, ${position.longitude}"),
-                        icon: BitmapDescriptor.defaultMarker,
-                        position: position,
-                      ),
-                    );
-                  });
-                },
+        mapType: MapType.normal,
+        initialCameraPosition: CameraPosition(
+          target: _currentPosition,
+          zoom: 14.0,
+        ),
+        markers: _markers,
+        onTap: (position) {
+          setState(() {
+            _markers.add(
+              Marker(
+                markerId:MarkerId("${position.latitude}, ${position.longitude}"),
+                icon: BitmapDescriptor.defaultMarker,
+                position: position,
               ),
+            );
+          });
+        },
+      ),
     );
   }
 }
